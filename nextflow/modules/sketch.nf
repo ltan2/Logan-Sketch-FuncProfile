@@ -1,6 +1,7 @@
 // Build sourmash sketches from the FASTA produced by the shared decompression process:
-// a DNA sketch, and (unless params.sourmash_protein_sketch is false) a protein sketch of the
-// same sequence, translated in six frames.
+// a DNA sketch, and a protein sketch of the same sequence translated in six frames. Both are
+// always produced -- the protein sketch is part of this pipeline's output contract, not an
+// option, so there is nothing here to turn it off with.
 
 process SOURMASH_SKETCH {
     tag "${accession}.${seq_type}"
@@ -16,9 +17,8 @@ process SOURMASH_SKETCH {
 
     output:
     tuple val(accession), val(seq_type), path("${accession}.${seq_type}.k${params.sourmash_ksize}.sig.zip"), emit: sig
-    // Optional because params.sourmash_protein_sketch can turn it off; nothing downstream
-    // consumes it, it is published for later protein-space searches (see the script below).
-    tuple val(accession), val(seq_type), path("${accession}.${seq_type}.protein.k${params.sourmash_protein_ksize}.sig.zip"), optional: true, emit: protein_sig
+    // Nothing downstream consumes this one; it is published for later protein-space searches.
+    tuple val(accession), val(seq_type), path("${accession}.${seq_type}.protein.k${params.sourmash_protein_ksize}.sig.zip"), emit: protein_sig
     path("${accession}.${seq_type}.sketch.ledger.csv"), emit: ledger
 
     script:
@@ -28,19 +28,19 @@ process SOURMASH_SKETCH {
     // this sketch is meant to be compared against, e.g.
     //   sourmash prefetch <acc>.<seq>.protein.k11.sig.zip <ko_sig> \
     //       --protein -k 11 --scaled 1000 --threshold-bp 1000 -o prefetch.csv
-    
-    sourmash sketch translate -f "${fasta}" \\
-        -p k=${params.sourmash_protein_ksize},scaled=${params.sourmash_protein_scale},abund \\
-        --name "${accession}" \\
-        -o "${accession}.${seq_type}.protein.k${params.sourmash_protein_ksize}.sig.zip"
-    
+    """
     set -euo pipefail
 
     sourmash sketch dna -f "${fasta}" \\
         -p k=${params.sourmash_ksize},scaled=${params.sourmash_scale},abund \\
         --name "${accession}" \\
         -o "${accession}.${seq_type}.k${params.sourmash_ksize}.sig.zip"
-    ${protein_sketch}
+
+    sourmash sketch translate -f "${fasta}" \\
+        -p k=${params.sourmash_protein_ksize},scaled=${params.sourmash_protein_scale},abund \\
+        --name "${accession}" \\
+        -o "${accession}.${seq_type}.protein.k${params.sourmash_protein_ksize}.sig.zip"
+
     write_ledger_row.sh "${accession}.${seq_type}.sketch.ledger.csv" "${accession}" "${seq_type}" sketch DONE
     """
 }

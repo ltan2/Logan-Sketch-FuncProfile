@@ -10,10 +10,9 @@ Checks, per sequence type (unitigs, contigs):
                 -> same matches with the same values (file-path columns ignored, so expected
                    results made on another machine still compare)
   protein       results/sketches/<seq>/<acc>.<seq>.protein.k<K>.sig.zip
-                -> checked only when the run was configured to produce it
-                   (--expect-protein-sketch). There is no known-good protein sketch to compare
-                   against, so this checks it is the sketch the run meant to make: protein
-                   moltype, and the k and scaled the KO collection needs it to have.
+                -> there is no known-good protein sketch to compare against, so this checks it
+                   is the sketch the run meant to make: present, protein moltype, and the k and
+                   scaled the KO collection needs it to have.
 FUNPROFILER outputs are only checked for the sequence types the run was configured to produce
 (--funprofiler-seq-types); expected files for other types are skipped.
 
@@ -127,9 +126,6 @@ def main():
     parser.add_argument("--results", required=True, help="Pipeline --outdir for the test run")
     parser.add_argument("--accession", required=True)
     parser.add_argument("--funprofiler-seq-types", default="unitigs,contigs")
-    parser.add_argument("--expect-protein-sketch", action="store_true",
-                        help="Require a translated protein sketch per sequence type "
-                             "(params.sourmash_protein_sketch)")
     parser.add_argument("--protein-ksize", type=int, default=11,
                         help="params.sourmash_protein_ksize of the run (default: 11)")
     parser.add_argument("--protein-scale", type=int, default=1000,
@@ -146,10 +142,9 @@ def main():
         if os.path.exists(expected_sketch):
             check_sketch(rep, expected_sketch, f"{R}/sketches/{seq}/{acc}.{seq}.k31.sig.zip", f"{seq} sketch")
 
-        if args.expect_protein_sketch:
-            check_protein_sketch(
-                rep, f"{R}/sketches/{seq}/{acc}.{seq}.protein.k{args.protein_ksize}.sig.zip",
-                f"{seq} protein sketch", args.protein_ksize, args.protein_scale)
+        check_protein_sketch(
+            rep, f"{R}/sketches/{seq}/{acc}.{seq}.protein.k{args.protein_ksize}.sig.zip",
+            f"{seq} protein sketch", args.protein_ksize, args.protein_scale)
 
         for expected, produced, key, label in (
                 (f"{E}/{acc}_ko_profiles_{one}", f"{R}/ko_profiles/{seq}/{acc}.{seq}_ko_profiles.csv", "ko_id", f"{seq} KO profile"),

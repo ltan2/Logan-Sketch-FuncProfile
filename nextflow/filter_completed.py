@@ -21,11 +21,11 @@ An accession counts as complete when, for every sequence type, either
     are both published.
 
 The protein sketch (`<acc>.<seq>.protein.k11.sig.zip`) is deliberately not part of this test:
-it is published by the same task as the DNA sketch, so one implies the other. The exception is
-a results tree that was built before protein sketching was turned on -- those accessions count
-as complete and are not re-run, which is the intended behaviour, since re-making their protein
-sketch means fetching and decompressing the whole assembly again. Run them as their own
-manifest if you want the sketch added.
+SOURMASH_SKETCH publishes it in the same task as the DNA sketch, so one implies the other. The
+exception is a results tree written before this pipeline produced protein sketches at all --
+those accessions still count as complete and are not re-run, which is the intended behaviour,
+since re-making their protein sketch means fetching and decompressing the whole assembly
+again. Run them as their own manifest if you want the sketch backfilled.
 
 Only these exact paths are stat'ed -- the results directories of a full run hold millions of
 files, so nothing here lists a directory or reads the ledger CSVs.
