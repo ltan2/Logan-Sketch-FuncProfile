@@ -26,10 +26,12 @@ fi
 
 tmux new -s "$session" -d
 
+# No ACCESSIONS_SOURCE here on purpose: run_benchmark.sh samples from the repo's own
+# manifest, <repo>/wgs_metagenome_accessions.txt, the one `make get-accessions` writes.
+# Set ACCESSIONS_SOURCE in the environment only to sample from somewhere else deliberately.
 tmux send-keys -t "$session" "
 cd '$repo_root'
 conda activate logan
-export ACCESSIONS_SOURCE='$repo_root/database/wgs_metagenome_accessions.txt'
 ./benchmark/run_benchmark.sh $sizes 2>&1 | tee benchmark/run_benchmark.log
 " C-m
 

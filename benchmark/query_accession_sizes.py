@@ -50,8 +50,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument(
         "--source",
-        default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "database", "wgs_metagenome_accessions.txt"),
-        help="Accession manifest, one per line (default: database/wgs_metagenome_accessions.txt)",
+        default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "wgs_metagenome_accessions.txt"),
+        help="Accession manifest, one per line (default: the repository's own "
+             "wgs_metagenome_accessions.txt, as written by `make get-accessions`)",
     )
     parser.add_argument(
         "--out",
