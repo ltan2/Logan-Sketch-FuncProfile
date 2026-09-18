@@ -147,26 +147,9 @@ for n in "${sizes[@]}"; do
 
     # RAM/swap every 15s while this batch runs -- the Nextflow trace only has per-task peaks,
     # which can't show swapping or other users' memory (see the RAM panel in plot_benchmark.py).
-    # mem_used/swap_used are whole-server; bench_pss is this benchmark's own share: the summed
-    # PSS of every process in this script's process group (Nextflow and all its tasks). PSS
-    # splits shared pages across processes, so unlike summed RSS it doesn't double-count.
+    # Same logger the full production run uses (benchmark/log_system_memory.sh).
     mkdir -p "$outdir"
-    pgid=$(ps -o pgid= $$ | tr -d ' ')
-    (
-        # Tasks exit between pgrep and reading their smaps_rollup; that expected failure must
-        # not kill the logger via the errexit/pipefail this subshell inherits from the script.
-        set +e +o pipefail
-        printf 'epoch_ms\tmem_total_bytes\tmem_used_bytes\tswap_used_bytes\tbench_pss_bytes\n'
-        while true; do
-            t=$(date +%s%3N)
-            bench_kb=$(for p in $(pgrep -g "$pgid"); do cat "/proc/$p/smaps_rollup" 2>/dev/null; done \
-                | awk '/^Pss:/{s+=$2} END{print s+0}')
-            awk -v t="$t" -v b="$bench_kb" '/^MemTotal:/{mt=$2} /^MemAvailable:/{ma=$2}
-                /^SwapTotal:/{st=$2} /^SwapFree:/{sf=$2}
-                END{printf "%s\t%.0f\t%.0f\t%.0f\t%.0f\n", t, mt*1024, (mt-ma)*1024, (st-sf)*1024, b*1024}' /proc/meminfo
-            sleep 15
-        done
-    ) > "$outdir/system_memory.tsv" &
+    "$script_dir/log_system_memory.sh" "$outdir/system_memory.tsv" "$(ps -o pgid= $$ | tr -d ' ')" 15 &
     mem_logger_pid=$!
     trap 'kill "$mem_logger_pid" 2>/dev/null' EXIT
 

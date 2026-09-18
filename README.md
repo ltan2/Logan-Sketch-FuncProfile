@@ -85,6 +85,18 @@ make run-test
 
 Nextflow uses `nextflow/nextflow.config` for input paths, analysis parameters, process resources, retry behavior, output paths, and execution profiles.
 
+Run the entire manifest with the shard-by-shard driver, which gates on the unit test, can be
+paused and resumed, and plots progress live:
+
+```bash
+nextflow/run_full.sh \
+  --accessions wgs_metagenome_accessions.txt \
+  --run-dir /scratch/$USER/logan_full_run
+```
+
+[how_to_run.md](how_to_run.md) is the full procedure: setup, launch, live monitoring, pausing,
+resuming, and recovering failures.
+
 ## Test and benchmark
 
 `nextflow/test/run_unit_test.sh` runs the full pipeline on one accession and compares every published output against the known-good results in `DRR001355_test_res/`. It exits nonzero on any mismatch, so it can gate a real run:
@@ -114,9 +126,14 @@ nextflow/test/run_unit_test.sh && nextflow run nextflow -resume
 | `nextflow/subworkflows/analyze.nf` | Fans valid sequences out to sourmash and FuncProfiler |
 | `nextflow/bin/write_ledger_row.sh` | Writes one CSV progress record per accession, sequence type, and stage |
 | `nextflow/unify_ledger.sh` | Unions the per-task ledger CSVs into one queryable DuckDB table |
+| `nextflow/run_full.sh` | Shard-by-shard driver for a full run: unit-test gate, pause/resume, live plots |
+| `nextflow/filter_completed.py` | Removes already-published accessions from a manifest (accession-level resume) |
 | `nextflow/test/accessions_smoke.txt` | Small manifest used by the Nextflow `test` profile |
 | `nextflow/test/run_unit_test.sh` | End-to-end pipeline test against known-good results |
 | `benchmark/` | Throughput benchmarking harness and plotting scripts |
+| `benchmark/live_monitor.py` | Live progress/resource plots for a run in progress |
+| `benchmark/log_system_memory.sh` | Server RAM/swap sampler shared by the full run and the benchmark |
+| `how_to_run.md` | End-to-end procedure for the full run |
 | `DRR001355_test_res/` | Known-good outputs the unit test compares against |
 
 ## Outputs
@@ -125,7 +142,8 @@ Results are published under `results/` by default:
 
 ```text
 results/
-  sketches/{unitigs,contigs}/
+  sketches/{unitigs,contigs}/        # <acc>.<seq>.k31.sig.zip (DNA) and
+                                     # <acc>.<seq>.protein.k11.sig.zip (translated protein)
   ko_profiles/{unitigs,contigs}/
   ledger/
   pipeline_trace.tsv

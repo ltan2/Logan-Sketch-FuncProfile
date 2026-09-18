@@ -147,8 +147,13 @@ def load_trace(bench_dir):
         rows.append(df)
     if not rows:
         raise SystemExit(f"No pipeline_trace.tsv files found under {bench_dir}/results_*/")
-    trace = pd.concat(rows, ignore_index=True)
+    return prepare_trace(pd.concat(rows, ignore_index=True))
 
+
+def prepare_trace(trace):
+    """Turn raw trace rows (string columns, as written by Nextflow with trace.raw = true)
+    into the typed columns every plot below expects. Split out of load_trace so
+    live_monitor.py can feed it the trace of a run that is still in progress."""
     # Nextflow prefixes a process's trace name with its enclosing subworkflow (e.g.
     # "ANALYZE:SOURMASH_SKETCH") -- keep only the process itself.
     trace["process"] = trace["process"].str.split(":").str[-1]

@@ -39,7 +39,16 @@ override() {
     printf '%s\n' "${NF_EXTRA_ARGS:-}" | { grep -oE -- "--$1[ =][^ ]+" || true; } | sed -E "s/--$1[ =]//" | tail -1
 }
 funprofiler_seq_types="$(override funprofiler_seq_types)"; funprofiler_seq_types="${funprofiler_seq_types:-$(config_value funprofiler_seq_types)}"
-echo "unit test settings: funprofiler_seq_types=$funprofiler_seq_types"
+
+# Whether a translated protein sketch is expected next to each DNA sketch, and with which
+# parameters -- same NF_EXTRA_ARGS-beats-config precedence as the sequence types above.
+protein_sketch="$(override sourmash_protein_sketch)"; protein_sketch="${protein_sketch:-$(config_value sourmash_protein_sketch)}"
+protein_ksize="$(override sourmash_protein_ksize)";   protein_ksize="${protein_ksize:-$(config_value sourmash_protein_ksize)}"
+protein_scale="$(override sourmash_protein_scale)";   protein_scale="${protein_scale:-$(config_value sourmash_protein_scale)}"
+protein_args=(--protein-ksize "${protein_ksize:-11}" --protein-scale "${protein_scale:-1000}")
+[ "$protein_sketch" = "true" ] && protein_args+=(--expect-protein-sketch)
+
+echo "unit test settings: funprofiler_seq_types=$funprofiler_seq_types protein_sketch=${protein_sketch:-false} (k=${protein_ksize:-11}, scaled=${protein_scale:-1000})"
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] unit test: running pipeline on $accession ==="
 
 # Nextflow writes .nextflow/ and its log into the working directory; keep those out of the repo.
@@ -60,6 +69,6 @@ echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] unit test: running pipeline on $accessi
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] unit test: comparing outputs ==="
 python3 "$test_dir_script/compare_to_expected.py" \
     --expected "$expected" --results "$test_dir/results" --accession "$accession" \
-    --funprofiler-seq-types "$funprofiler_seq_types"
+    --funprofiler-seq-types "$funprofiler_seq_types" "${protein_args[@]}"
 
 rm -rf "$test_dir/work"   # passed: the intermediate task folders aren't needed; results stay for inspection

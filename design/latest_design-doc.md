@@ -96,7 +96,7 @@ The batching layer supplies a bounded accession manifest to Nextflow. Within tha
 | 2 | `nextflow/main.nf` | Convert accessions into independent work items | Accession channel |
 | 3 | `FETCH_LOGAN` | Retrieve unitigs and contigs and apply the compressed-size gate | Tagged `.fa.zst` inputs or skip records |
 | 4a | `DECOMPRESS_FASTA` | Decompress each validated assembly once | Shared FASTA input |
-| 4b | `SOURMASH_SKETCH` | Generate FracMinHash sketches | `.sig.zip` files |
+| 4b | `SOURMASH_SKETCH` | Generate DNA and translated-protein FracMinHash sketches | `.sig.zip` files |
 | 4c | `FUNPROFILER` | Identify KEGG Orthology groups and relative abundances | KO profile and prefetch CSV files |
 | 4d | `CLEANUP_FASTA` | Delete the shared FASTA once both consumers are done with it | Freed scratch space |
 | 5 | Ledger and publication processes | Record stage outcomes and publish durable results | CSV ledger rows and result files |
@@ -143,9 +143,11 @@ Logan does not always publish both files for an accession. A key that does not e
 `ANALYZE` accepts tuples shaped as `(accession, seq_type, zst_fasta)`. It first decompresses each input and then fans the shared FASTA out to sourmash and FuncProfiler:
 
 ```text
-compressed input ─> DECOMPRESS_FASTA ─┬─> SOURMASH_SKETCH ─> sketches
+compressed input ─> DECOMPRESS_FASTA ─┬─> SOURMASH_SKETCH ─> DNA + protein sketches
                                       └─> FUNPROFILER ─────> KO profiles
 ```
+
+`SOURMASH_SKETCH` writes two sketches per sequence type: the DNA sketch (`sourmash sketch dna`, k=31, scaled=1000) and, unless `params.sourmash_protein_sketch` is false, a protein sketch of the same sequence (`sourmash sketch translate`, k=11 amino acids, scaled=1000). The protein parameters default to the KO collection's, so the published sketch can be prefetched, gathered, or searched against it — or against any other protein collection built the same way — long after the FASTA it came from has been deleted. `funcprofiler` builds an equivalent sketch internally for its own prefetch and discards it, so producing this one is deliberate duplicated work, traded for the sketch being durable.
 
 `FUNPROFILER` only runs on the sequence types in `params.funprofiler_seq_types` (both by default: contig KOs are not a subset of unitig KOs). `CLEANUP_FASTA` deletes each decompressed FASTA — often multi-GB — as soon as both consumers have finished with it, rather than waiting for end-of-run cleanup.
 
@@ -171,7 +173,11 @@ Expected ledger statuses are:
 | `DONE` | The stage completed and produced its expected result |
 | `SKIPPED_EMPTY` | The Logan object was missing or below the compressed-size threshold |
 
-Nextflow's work cache is the primary resume mechanism. A run uses `-resume` with the same launch directory and declared inputs. The ledger is a durable audit trail, but the current CSV implementation does not schedule or suppress tasks. Scheduling from ledger state is a future orchestration feature.
+Resume is at the accession level, not the task level. `DECOMPRESS_FASTA` deletes the compressed input it consumed and `CLEANUP_FASTA` deletes the decompressed FASTA once both analyses are done with it, so a cached task's declared outputs are gone by the time a later run looks for them; Nextflow then invalidates `FETCH_LOGAN` and every task below it. A second run of the five-accession test profile with `-resume` reported `completed=45 failed=0 cached=0`, i.e. no reuse at all. Published results, which are durable, are what a resumed run reuses instead: `nextflow/filter_completed.py` removes from a manifest every accession whose sketches, KO profiles, or `SKIPPED_EMPTY` ledger rows are already on disk.
+
+`nextflow/run_full.sh` applies that to a production-scale manifest. It freezes the manifest, splits it into fixed shards, runs one shard at a time into a single results tree, and records each completed shard in its run directory, so a run can be paused at a shard boundary (a `PAUSE` file) or interrupted mid-shard (a signal) and resumed by re-issuing the same command. `benchmark/live_monitor.py` plots progress, throughput, and resource use from the per-shard traces while the run is still going. The operational procedure is in `how_to_run.md`.
+
+The ledger remains a durable audit trail; the CSV implementation does not itself schedule or suppress tasks.
 
 ## 5. Ledger
 

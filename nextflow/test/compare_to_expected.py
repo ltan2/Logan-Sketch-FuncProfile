@@ -9,6 +9,11 @@ Checks, per sequence type (unitigs, contigs):
   prefetch      results/ko_profiles/<seq>/<acc>.<seq>_prefetch_out.csv
                 -> same matches with the same values (file-path columns ignored, so expected
                    results made on another machine still compare)
+  protein       results/sketches/<seq>/<acc>.<seq>.protein.k<K>.sig.zip
+                -> checked only when the run was configured to produce it
+                   (--expect-protein-sketch). There is no known-good protein sketch to compare
+                   against, so this checks it is the sketch the run meant to make: protein
+                   moltype, and the k and scaled the KO collection needs it to have.
 FUNPROFILER outputs are only checked for the sequence types the run was configured to produce
 (--funprofiler-seq-types); expected files for other types are skipped.
 
@@ -93,6 +98,22 @@ def check_sketch(rep, expected, produced, label):
                         "hashes compared only")
 
 
+def check_protein_sketch(rep, produced, label, ksize, scaled):
+    """Verify the translated protein sketch is usable for what it exists for: being compared
+    against the KO collection (or any other protein collection built with the same k/scaled).
+    A DNA sketch, a dayhoff/hp sketch, or the wrong k would all silently produce zero matches."""
+    if not os.path.exists(produced):
+        return rep.fail(label, f"missing {produced}")
+    mh = list(sourmash.load_file_as_signatures(produced))[0].minhash
+    if mh.moltype != "protein":
+        return rep.fail(label, f"moltype is {mh.moltype}, expected protein")
+    if (mh.ksize, mh.scaled) != (ksize, scaled):
+        return rep.fail(label, f"k/scaled {mh.ksize}/{mh.scaled}, expected {ksize}/{scaled}")
+    # No lower bound on hashes: a sequence file with almost no assembled content legitimately
+    # translates to an empty protein sketch, the same way its KO profile comes back empty.
+    rep.ok(label, f"protein k={mh.ksize}, scaled={mh.scaled}, {len(mh.hashes)} hashes")
+
+
 def check_table(rep, expected, produced, key, label):
     if not os.path.exists(produced):
         return rep.fail(label, f"missing {produced}")
@@ -106,6 +127,13 @@ def main():
     parser.add_argument("--results", required=True, help="Pipeline --outdir for the test run")
     parser.add_argument("--accession", required=True)
     parser.add_argument("--funprofiler-seq-types", default="unitigs,contigs")
+    parser.add_argument("--expect-protein-sketch", action="store_true",
+                        help="Require a translated protein sketch per sequence type "
+                             "(params.sourmash_protein_sketch)")
+    parser.add_argument("--protein-ksize", type=int, default=11,
+                        help="params.sourmash_protein_ksize of the run (default: 11)")
+    parser.add_argument("--protein-scale", type=int, default=1000,
+                        help="params.sourmash_protein_scale of the run (default: 1000)")
     args = parser.parse_args()
 
     acc, E, R = args.accession, args.expected, args.results
@@ -117,6 +145,11 @@ def main():
         expected_sketch = f"{E}/{acc}.{seq}.k31.sig.zip"
         if os.path.exists(expected_sketch):
             check_sketch(rep, expected_sketch, f"{R}/sketches/{seq}/{acc}.{seq}.k31.sig.zip", f"{seq} sketch")
+
+        if args.expect_protein_sketch:
+            check_protein_sketch(
+                rep, f"{R}/sketches/{seq}/{acc}.{seq}.protein.k{args.protein_ksize}.sig.zip",
+                f"{seq} protein sketch", args.protein_ksize, args.protein_scale)
 
         for expected, produced, key, label in (
                 (f"{E}/{acc}_ko_profiles_{one}", f"{R}/ko_profiles/{seq}/{acc}.{seq}_ko_profiles.csv", "ko_id", f"{seq} KO profile"),
