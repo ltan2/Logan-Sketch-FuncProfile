@@ -216,3 +216,26 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# codex
+.codex/
+.codex_tmp/
+
+# Nextflow
+work/
+.nextflow/
+.nextflow.log*
+results/
+
+# benchmark runs
+benchmark/runs/
+
+# Generated data: SRA metadata snapshot, DuckDB database, accession manifest,
+# and the downloaded KO signature collection (see the Makefile).
+aws_sra_metadata/
+sra_metadata.db
+wgs_metagenome_accessions.txt
+KOs_sketched_scaled_1000.sig.zip
+
+# DS_Store
+.DS_Store

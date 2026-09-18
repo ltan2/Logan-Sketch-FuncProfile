@@ -1,0 +1,8 @@
+# Small real subset of wgs_metagenome_accessions.txt for local dev / CI smoke-testing.
+# DRR001355 has already been run through logan-subworkflow.sh manually (see test_res/)
+# and is known to produce non-empty unitigs/contigs.
+DRR000836
+DRR000980
+DRR000981
+DRR001355
+DRR001356

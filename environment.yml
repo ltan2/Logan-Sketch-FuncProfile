@@ -1,0 +1,24 @@
+name: logan
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - duckdb
+  - duckdb-cli
+  - biom-format
+  - matplotlib=3.9.*
+  - sourmash=4.9.4
+  - zstd
+  - awscli
+  # Workflow manager for the pipeline in nextflow/. Pinning it here, rather than
+  # asking users to install it themselves, is what makes the pipeline reproducible.
+  - nextflow=26.04.6
+  - openjdk=21
+  - pip
+  - pip:
+      # Pinned to a specific commit since fmh-funprofiler has no versioned releases.
+      - git+https://github.com/KoslickiLab/fmh-funprofiler.git@dbb016b8c3a6d2d55e565d39b179dc27a96a62ec
