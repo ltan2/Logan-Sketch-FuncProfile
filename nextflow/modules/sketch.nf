@@ -28,20 +28,12 @@ process SOURMASH_SKETCH {
     // this sketch is meant to be compared against, e.g.
     //   sourmash prefetch <acc>.<seq>.protein.k11.sig.zip <ko_sig> \
     //       --protein -k 11 --scaled 1000 --threshold-bp 1000 -o prefetch.csv
-    // That particular query is already done for you by FUNPROFILER, which publishes its
-    // prefetch output; publishing the sketch itself is what makes any *other* protein-space
-    // search (a different KO release, gather, search, containment against another sample)
-    // possible later without re-reading the multi-GB FASTA, which by then is deleted.
-    // `--sourmash_protein_sketch false` on the command line arrives as the STRING "false",
-    // and every non-empty string is truthy in Groovy -- so compare the text, not the object.
-    def protein_enabled = !(params.sourmash_protein_sketch.toString().toLowerCase() in ['false', '0', 'no'])
-    def protein_sketch = protein_enabled ? """
+    
     sourmash sketch translate -f "${fasta}" \\
         -p k=${params.sourmash_protein_ksize},scaled=${params.sourmash_protein_scale},abund \\
         --name "${accession}" \\
         -o "${accession}.${seq_type}.protein.k${params.sourmash_protein_ksize}.sig.zip"
-    """ : ""
-    """
+    
     set -euo pipefail
 
     sourmash sketch dna -f "${fasta}" \\

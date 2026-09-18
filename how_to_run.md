@@ -133,9 +133,7 @@ What to decide first:
 | Decision | Guidance |
 |---|---|
 | **Where** | Put `--run-dir` on `/scratch`, not the repo disk. Results, work dirs and state all live under it. |
-| **Disk** | A DNA-only run measured ~3.7 MB per accession (2.7 GB sketches + 1.0 GB KO profiles + 18 MB ledger per 1,000 accessions) — roughly **4.5 TB** for 1.2M accessions. Protein sketches are on by default and measured 1.9x the size of the DNA sketch beside them, which roughly triples the sketch share: budget about **10 TB**, plus transient work-dir space for the shard currently running. Set `params.sourmash_protein_sketch = false` to go back to the smaller figure. |
-| **Time** | The last benchmark did 1,000 accessions in ~1.5 h on this server, i.e. roughly **70-80 days** for 1.2M accessions. Protein sketching adds to that: measured on four accessions, `SOURMASH_SKETCH` went from ~2.5 s to ~9.6 s per task, about +14 s of CPU per accession against FUNPROFILER's ~32 s — call it ~35% more analysis CPU. The live dashboard's ETA replaces these estimates as soon as real completions exist. |
-| **Shard size** | `--shard-size 5000` (~7 h per shard) is the default. Smaller shards = finer pause granularity and less work lost to an interrupt, but more Nextflow startups and more end-of-shard drain time where the machine isn't full. |
+| **Shard size** | `--shard-size 5000` is the default. Smaller shards = finer pause granularity and less work lost to an interrupt, but more Nextflow startups and more end-of-shard drain time where the machine isn't full. |
 | **Concurrency** | Set in `nextflow/nextflow.config`: `executor.cpus` (700), `executor.memory` (2700 GB), and `FETCH_LOGAN.maxForks` (50 concurrent S3 downloads). Agree these with the other users of this shared server before starting. |
 
 One more caveat worth knowing before you start: a full run publishes millions of small files
@@ -213,17 +211,6 @@ the plots are complete up to the last finished task and a task in flight is invi
 ends. With a median task around a minute and a p95 around ten, the dashboard trails the real
 state by minutes, not hours — but a sudden flat spot at the right edge usually means "tasks
 still running", not "nothing happening".
-
-**In a browser from your laptop** — serve the directory over SSH:
-
-```bash
-# on the server
-cd /scratch/$USER/logan_full_run/plots_live && python3 -m http.server 8765
-
-# on your laptop
-ssh -N -L 8765:localhost:8765 $USER@<server>
-# then open http://localhost:8765
-```
 
 **In the terminal:**
 
