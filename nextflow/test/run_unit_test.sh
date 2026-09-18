@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pipeline unit test: runs the full Nextflow pipeline on one accession with known-good results and
+# Pipeline unit test: runs the full Nextflow pipeline on one accession with known-good results DRR001355_test_res and
 # compares every published output against them (nextflow/test/compare_to_expected.py). Exits 0 only
 # if everything matches, so it can gate a benchmark or production run:
 #

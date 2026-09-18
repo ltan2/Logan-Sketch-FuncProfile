@@ -1,14 +1,11 @@
 // Build sourmash sketches from the FASTA produced by the shared decompression process:
-// a DNA sketch, and a protein sketch of the same sequence translated in six frames. Both are
-// always produced -- the protein sketch is part of this pipeline's output contract, not an
-// option, so there is nothing here to turn it off with.
+// a DNA sketch, and a protein sketch of the same sequence translated in six frames. 
 
 process SOURMASH_SKETCH {
     tag "${accession}.${seq_type}"
     // NOTE: path must be a closure here, not a plain interpolated string -- publishDir's
     // path is evaluated once at process-definition time unless wrapped in `{ ... }` to
     // defer it until a task actually runs and `seq_type` (an input variable) is bound.
-    // `tag` above is exempt from this -- Nextflow always evaluates it per task.
     publishDir(path: { "${params.outdir}/sketches/${seq_type}" }, mode: 'copy', pattern: "*.sig.zip")
     publishDir "${params.outdir}/ledger", mode: 'copy', pattern: "*.ledger.csv"
 
