@@ -124,7 +124,7 @@ Print what the driver would do. It creates the run directory, but runs, shards a
 nextflow/run_full.sh \
   --accessions wgs_metagenome_accessions.txt \
   --run-dir /scratch/$USER/logan_full_run \
-  --shard-size 5000 \
+  --shard-size 10000 \
   --dry-run
 ```
 
@@ -133,8 +133,10 @@ What to decide first:
 | Decision | Guidance |
 |---|---|
 | **Where** | Put `--run-dir` on `/scratch`, not the repo disk. Results, work dirs and state all live under it. |
-| **Shard size** | `--shard-size 5000` is the default. Smaller shards = finer pause granularity and less work lost to an interrupt, but more Nextflow startups and more end-of-shard drain time where the machine isn't full. |
-| **Concurrency** | Set in `nextflow/nextflow.config`: `executor.cpus` (700), `executor.memory` (2700 GB), and `FETCH_LOGAN.maxForks` (50 concurrent S3 downloads). Agree these with the other users of this shared server before starting. |
+| **Shard size** | `--shard-size 10000` is the default. A shard can finish no faster than its single longest accession, so the shard has to carry enough other work to hide that: at 10,000 accessions the packing time is ~4 h while the biggest accession in the manifest (41.8 GB compressed) is an estimated ~7 h of single-core FUNPROFILER, leaving the machine draining. 25,000 gives ~10 h of packing against the same ~7 h critical path and keeps it full. Interrupting mid-shard costs little either way -- resume skips everything already published -- so larger shards mainly cost pause-at-boundary latency. |
+| **Size survey** | Strongly recommended. With `--size-csv` (or `accession_size_analysis/accession_sizes.csv` present), shards are balanced by compressed size and the heavy accessions are spread through each shard at a stride, so multi-hour accessions start in the first wave instead of stranding the machine at the end. Measured without it on 1,000 accessions: the last 10% of accessions took 71% of the wall clock. The stride also bounds transient disk -- a shard's 350 largest would otherwise decompress at once (~7.2 TB); spread out it is ~1.4 TB. Build it with `python3 benchmark/query_accession_sizes.py`. |
+| **Concurrency** | Set in `nextflow/nextflow.config`: `executor.cpus` (780, i.e. ~390 analysis tasks at `cpus = 2`; a task averages 1.30 real cores, so that is ~507 of the machine's 768), `executor.memory` (2700 GB), `FETCH_LOGAN.maxForks` (100 concurrent S3 downloads; 50 measured ~8.3 Gbit/s of the 20 Gbit/s bond), and `cpus` on the two analysis processes (2 each). Agree these with the other users of this shared server before starting. |
+| **Network** | The full manifest is ~418 TB of compressed Logan objects to pull from S3 (~345 MB per accession, both sequence types), spread over the whole run. |
 
 One more caveat worth knowing before you start: a full run publishes millions of small files
 into `results/sketches/*/` and `results/ko_profiles/*/`. That is fine to write and to open by
@@ -147,15 +149,20 @@ by exact path for that reason.
 nextflow/run_full.sh \
   --accessions wgs_metagenome_accessions.txt \
   --run-dir /scratch/$USER/logan_full_run \
-  --shard-size 5000
+  --shard-size 10000 \
+  --size-csv accession_size_analysis/accession_sizes.csv
 ```
+
+(`--size-csv` can be left out if the file is at `accession_size_analysis/accession_sizes.csv`,
+where `benchmark/query_accession_sizes.py` writes it -- the driver picks it up automatically.)
 
 That single command:
 
 1. re-launches itself in a **detached tmux session** (`logan_full_run`) so the run survives a
    dropped SSH connection — pass `NO_TMUX=1` to stay in the foreground;
-2. freezes the manifest into `<run-dir>/manifest.txt` and splits it into shards of 5,000
-   accessions, recording a checksum so a resumed run can't silently re-shard a changed
+2. freezes the manifest into `<run-dir>/manifest.txt` and splits it into shards
+   (`nextflow/shard_manifest.py`: balanced by compressed size, heaviest accession first within
+   each shard), recording a checksum so a resumed run can't silently re-shard a changed
    manifest;
 3. runs the **unit test gate** from section 3 and stops if it fails;
 4. starts the **server memory logger** and the **live plots** (section 6);
@@ -235,7 +242,7 @@ python3 benchmark/live_monitor.py \
 ```
 
 Add `--once` for a single snapshot instead of a loop (this is also how you regenerate the
-plots after the run is over), `--total-cpus 700 --memory-limit-gb 2700` to draw the capacity
+plots after the run is over), `--total-cpus 768 --memory-limit-gb 2700` to draw the capacity
 reference lines, and `--interval 30` to refresh faster.
 
 ## 7. Pause
@@ -313,7 +320,7 @@ rm -f /scratch/$USER/logan_full_run/PAUSE          # only if you created it
 nextflow/run_full.sh \
   --accessions wgs_metagenome_accessions.txt \
   --run-dir /scratch/$USER/logan_full_run \
-  --shard-size 5000
+  --shard-size 10000
 ```
 
 What happens, in order:
@@ -411,7 +418,7 @@ duckdb $RUN/results/ledger.duckdb -c "SELECT stage, status, count(*) FROM ledger
 
 # 3. Final plots over the whole run instead of the last 24 h.
 python3 benchmark/live_monitor.py --run-dir $RUN --once --window-hours 100000 \
-  --total-cpus 700 --memory-limit-gb 2700
+  --total-cpus 768 --memory-limit-gb 2700
 ```
 
 Results are in `$RUN/results/{sketches,ko_profiles,ledger}/`. Each sequence type's sketch
@@ -461,7 +468,8 @@ lets you run any *other* protein-space query later, once the FASTA is gone.
 | Build the manifest | `make get-accessions` |
 | Unit test | `nextflow/test/run_unit_test.sh` |
 | Plan | `nextflow/run_full.sh --accessions ... --run-dir ... --dry-run` |
-| Launch | `nextflow/run_full.sh --accessions ... --run-dir ... --shard-size 5000` |
+| Build the size survey | `python3 benchmark/query_accession_sizes.py` |
+| Launch | `nextflow/run_full.sh --accessions ... --run-dir ... --shard-size 10000` |
 | Attach | `tmux attach -t logan_full_run` |
 | Live dashboard | open `<run-dir>/plots_live/index.html` (or serve it with `python3 -m http.server`) |
 | Pause after this shard | `touch <run-dir>/PAUSE` |
@@ -477,6 +485,8 @@ lets you run any *other* protein-space query later, once the FASTA is gone.
 |---|---|
 | `nextflow/run_full.sh` | Shard-by-shard driver: gate, sharding, pause/resume, state, live monitor |
 | `nextflow/filter_completed.py` | Removes already-published accessions from a manifest (accession-level resume) |
+| `nextflow/shard_manifest.py` | Splits the manifest into size-balanced shards, heaviest accession first |
+| `benchmark/query_accession_sizes.py` | Surveys each accession's compressed size on S3; input to the sharder |
 | `benchmark/live_monitor.py` | Live plots and dashboard from the traces of a run in progress |
 | `benchmark/log_system_memory.sh` | Server RAM/swap sampler, shared by the full run and the benchmark |
 | `benchmark/plot_benchmark.py` | After-the-fact plots for a benchmark sweep across several batch sizes |

@@ -11,7 +11,11 @@
 #   --run-dir DIR       run state + work + results
 #                                                (default: /scratch/$USER/logan_full_run)
 #   --outdir DIR        published results        (default: <run-dir>/results)
-#   --shard-size N      accessions per shard     (default: 5000)
+#   --shard-size N      accessions per shard     (default: 10000)
+#   --size-csv FILE     accession size survey (benchmark/query_accession_sizes.py output) used
+#                       to balance shards and put the biggest accessions first within each one.
+#                       Defaults to <repo>/accession_size_analysis/accession_sizes.csv if that
+#                       exists; without it, shards are plain sequential chunks.
 #   --shards N          run at most N shards this invocation, then stop (default: all)
 #   --keep-work         keep each completed shard's work directory (default: delete it)
 #   --no-monitor        don't start benchmark/live_monitor.py alongside the run
@@ -52,7 +56,8 @@
 # LAYOUT of --run-dir
 #   manifest.txt                frozen copy of the manifest this run is sharded from
 #   manifest.sha256             guards against the manifest changing under a resumed run
-#   shards/shard_NNNNN.txt      the shards themselves (stable: never re-sharded)
+#   shards/shard_NNNNN.txt      the shards themselves (stable: never re-sharded), size-balanced
+#                               and ordered heaviest-first when a size survey is available
 #   shards/shard_NNNNN.todo.txt what the latest attempt at that shard actually ran
 #   state/shard_NNNNN.done      shard finished (one line: when, and how many accessions)
 #   state/shard_NNNNN.failed.txt  accessions with a FAILED task in that shard, from its trace
@@ -73,11 +78,17 @@ repo_root="$(dirname "$script_dir")"
 accessions="$repo_root/wgs_metagenome_accessions.txt"
 run_dir="/scratch/$(whoami)/logan_full_run"
 outdir=""
-shard_size=5000
+shard_size=10000
+size_csv=""
 max_shards=0
 keep_work=0
 monitor=1
 dry_run=0
+
+# Keep a pristine copy: the parsing loop below consumes $@ with `shift`, and the tmux
+# relaunch further down has to hand the session exactly what the user typed. Passing "$@"
+# there silently relaunched with no arguments at all -- every flag reverted to its default.
+original_args=("$@")
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -85,11 +96,12 @@ while [ "$#" -gt 0 ]; do
         --run-dir)    run_dir="$2";    shift 2 ;;
         --outdir)     outdir="$2";     shift 2 ;;
         --shard-size) shard_size="$2"; shift 2 ;;
+        --size-csv)   size_csv="$2";   shift 2 ;;
         --shards)     max_shards="$2"; shift 2 ;;
         --keep-work)  keep_work=1;     shift ;;
         --no-monitor) monitor=0;       shift ;;
         --dry-run)    dry_run=1;       shift ;;
-        -h|--help)    sed -n '2,67p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+        -h|--help)    sed -n '2,72p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
         *) echo "Unknown option: $1 (try --help)" >&2; exit 2 ;;
     esac
 done
@@ -104,7 +116,7 @@ if [ -z "${NO_TMUX:-}" ] && [ -z "${TMUX:-}" ] && [ "$dry_run" -eq 0 ]; then
             exit 1
         fi
         tmux new-session -d -s "$session" \
-            "NO_TMUX=1 PATH=$(printf '%q' "$PATH") SKIP_UNIT_TEST=$(printf '%q' "${SKIP_UNIT_TEST:-}") NF_EXTRA_ARGS=$(printf '%q' "${NF_EXTRA_ARGS:-}") $(printf '%q ' "${BASH_SOURCE[0]}" "$@")"
+            "NO_TMUX=1 PATH=$(printf '%q' "$PATH") SKIP_UNIT_TEST=$(printf '%q' "${SKIP_UNIT_TEST:-}") NF_EXTRA_ARGS=$(printf '%q' "${NF_EXTRA_ARGS:-}") $(printf '%q ' "${BASH_SOURCE[0]}" ${original_args[@]+"${original_args[@]}"})"
         echo "Started in detached tmux session '$session' -- it keeps running if your SSH session drops."
         echo "  Watch it:            tmux attach -t $session      (detach again with Ctrl-b d)"
         echo "  Pause after shard:   touch $run_dir/PAUSE"
@@ -160,8 +172,25 @@ fi
 # Shard once, then never again -- the shard files are this run's unit of progress.
 # ---------------------------------------------------------------------------------------
 if ! compgen -G "$run_dir/shards/shard_*.txt" > /dev/null; then
-    split -l "$shard_size" -d -a 5 --additional-suffix=.txt "$frozen" "$run_dir/shards/shard_"
-    log "split into $(ls "$run_dir"/shards/shard_*.txt | wc -l) shards of up to $shard_size accessions"
+    # A shard's wall clock is its longest accession, so the shards are built by
+    # nextflow/shard_manifest.py rather than `split`: balanced by compressed size, and ordered
+    # heaviest-first inside each shard so the multi-hour accessions start at t=0 instead of
+    # stranding the machine at the end. Falls back to sequential chunks with no size survey.
+    if [ -z "$size_csv" ] && [ -f "$repo_root/accession_size_analysis/accession_sizes.csv" ]; then
+        size_csv="$repo_root/accession_size_analysis/accession_sizes.csv"
+    fi
+    if [ -n "$size_csv" ]; then
+        [ -f "$size_csv" ] || { echo "ERROR: --size-csv not found: $size_csv" >&2; exit 1; }
+        log "sharding by size using $size_csv"
+        python3 "$repo_root/nextflow/shard_manifest.py" --accessions "$frozen" \
+            --out-dir "$run_dir/shards" --shard-size "$shard_size" --size-csv "$size_csv"
+    else
+        log "no accession size survey found -- shards will be sequential chunks, which lets a"
+        log "  large accession land late in a shard and idle the machine (see how_to_run.md)."
+        python3 "$repo_root/nextflow/shard_manifest.py" --accessions "$frozen" \
+            --out-dir "$run_dir/shards" --shard-size "$shard_size"
+    fi
+    log "$(ls "$run_dir"/shards/shard_*.txt | grep -vc '\.todo\.txt$') shards of up to $shard_size accessions"
 fi
 shards=()
 while IFS= read -r line; do shards+=("$line"); done < <(ls "$run_dir"/shards/shard_*.txt 2>/dev/null | grep -v '\.todo\.txt$' | sort)

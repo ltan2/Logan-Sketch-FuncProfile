@@ -128,6 +128,7 @@ nextflow/test/run_unit_test.sh && nextflow run nextflow -resume
 | `nextflow/unify_ledger.sh` | Unions the per-task ledger CSVs into one queryable DuckDB table |
 | `nextflow/run_full.sh` | Shard-by-shard driver for a full run: unit-test gate, pause/resume, live plots |
 | `nextflow/filter_completed.py` | Removes already-published accessions from a manifest (accession-level resume) |
+| `nextflow/shard_manifest.py` | Splits the manifest into size-balanced shards, heaviest accession first |
 | `nextflow/test/accessions_smoke.txt` | Small manifest used by the Nextflow `test` profile |
 | `nextflow/test/run_unit_test.sh` | End-to-end pipeline test against known-good results |
 | `benchmark/` | Throughput benchmarking harness and plotting scripts |

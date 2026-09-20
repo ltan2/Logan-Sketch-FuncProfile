@@ -319,7 +319,8 @@ def plot_process_mean_task_time(completed_df, out_path):
     plt.close(fig)
 
 
-def plot_cpu_utilization(trace_df, sysmem_df, out_dir, total_cpus=None, memory_limit_gb=None):
+def plot_cpu_utilization(trace_df, sysmem_df, out_dir, total_cpus=None, memory_limit_gb=None,
+                         incomplete_after=None):
     """One figure per batch. Top: allocated vs. actually-used CPU cores over wall-clock time,
     plus the number of concurrently active tasks (right axis) -- "are we filling the
     available server capacity?" Bottom: RAM reserved by running tasks (what Nextflow counts
@@ -354,10 +355,29 @@ def plot_cpu_utilization(trace_df, sysmem_df, out_dir, total_cpus=None, memory_l
 
         fig, (ax1, ax3) = plt.subplots(2, 1, figsize=(11, 9), sharex=True)
         ax1.step(ev_time, cpu_alloc, where="post", label="CPUs allocated", color="tab:blue")
-        ax1.step(ev_time, cpu_actual, where="post", label="CPUs actually used (measured %cpu)", color="tab:orange")
+        ax1.step(ev_time, cpu_actual, where="post", label="CPUs actually used (measured %cpu, completed tasks only)", color="tab:orange")
         if total_cpus:
             ax1.axhline(total_cpus, color="tab:red", linestyle=":", linewidth=1,
                         label=f"Server capacity ({total_cpus} cpus)")
+        # Nextflow writes a trace row only when a task completes, so a task still running is
+        # absent from the trace entirely and contributes nothing to the curves above. That is
+        # harmless once a sweep has finished and badly misleading while one is in progress:
+        # measured 10 h into a 24,718-accession shard whose longest task ran 9.2 h, allocated
+        # CPU read 116 cores at the right-hand edge against a true 766 (85% low), converging
+        # only ~10 h back. Read naively that looks like allocation collapsing when it is the
+        # plot catching up with itself. Callers that cannot supply the missing tasks pass
+        # `incomplete_after` to mark where the data stops being a measurement and starts being
+        # a lower bound; live_monitor.py instead reconstructs them and passes None.
+        if incomplete_after is not None:
+            # Shaded on both panels: ax3's reserved-RAM step function is built from the same
+            # completed-tasks-only data and understates by the same amount.
+            span_end = pd.Timestamp(ev_time[-1])
+            if pd.Timestamp(incomplete_after) < span_end:
+                for ax in (ax1, ax3):
+                    ax.axvspan(incomplete_after, span_end, color="tab:red", alpha=0.07, zorder=0)
+                ax1.axvline(incomplete_after, color="tab:red", linestyle="--", linewidth=1.2,
+                            alpha=0.7, label="Incomplete beyond here: tasks still running are "
+                                             "not in the trace")
         ax1.set_ylabel("CPU cores")
         ax1.grid(True, linestyle="--", alpha=0.4)
 
@@ -370,7 +390,10 @@ def plot_cpu_utilization(trace_df, sysmem_df, out_dir, total_cpus=None, memory_l
         lines2, labels2 = ax2.get_legend_handles_labels()
         ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper left", fontsize=8)
 
-        ax1.set_title(f"CPU allocation vs. actual usage over time (n={n:,} accessions)")
+        title = f"CPU allocation vs. actual usage over time (n={n:,} accessions)"
+        if incomplete_after is not None:
+            title += "\nshaded region reads low: tasks still running are absent from the trace"
+        ax1.set_title(title, fontsize=10)
 
         if sub["memory_bytes"].notna().any():
             _, mem_reserved = _step_series(sub["start_ts"], sub["complete_ts"], sub["memory_bytes"].fillna(0.0))

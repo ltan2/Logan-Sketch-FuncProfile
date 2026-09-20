@@ -38,6 +38,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta
@@ -394,6 +395,89 @@ def write_index(out_dir, run_dir, progress, state, window_hours, refresh):
         handle.write(html)
 
 
+# Nextflow's own log is the only place a run in progress records tasks that have started but
+# not finished: the trace gets a row only when a task completes, so every still-running task is
+# invisible to it (see plot_benchmark.plot_cpu_utilization). Submission and completion are both
+# timestamped and keyed by the work-directory hash, so the difference between the two sets is
+# exactly what is in flight. Recovering it is what lets the CPU plot show true allocation right
+# up to now, instead of a curve that sags toward zero precisely as long tasks pile up.
+_SUBMITTED_RE = re.compile(r"^(\w{3}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})\s.*"
+                           r"\[([0-9a-f]{2}/[0-9a-f]{6})\] Submitted process > (\S+)")
+_COMPLETED_RE = re.compile(r"Task completed >.*workDir: (\S+)")
+
+# How stale the log may be before unfinished submissions are read as killed rather than
+# running: an interrupted shard leaves orphan submissions behind permanently.
+_INFLIGHT_MAX_LOG_AGE_S = 300
+
+
+def _log_ts_to_utc(stamps, ref_epoch):
+    """Nextflow logs local wall-clock time with no year ('Sep-18 23:47:05.666'); the trace is
+    UTC epoch milliseconds. Reconcile the two so they can share an axis. The year comes from
+    the log's own mtime, stepping back one for any line that would otherwise land in the
+    future (a run spanning New Year)."""
+    ref = pd.Timestamp.fromtimestamp(ref_epoch)
+    local = pd.to_datetime(f"{ref.year}-" + pd.Series(list(stamps), dtype="string"),
+                           format="%Y-%b-%d %H:%M:%S.%f", errors="coerce")
+    ahead = local > ref + pd.Timedelta(days=1)
+    if ahead.any():
+        local = local.where(~ahead, local - pd.DateOffset(years=1))
+    return local - (pd.Timestamp.now() - pd.Timestamp.now("UTC").tz_convert(None)).round("s")
+
+
+def read_inflight(run_dir, rows, now):
+    """Tasks submitted but not yet completed, from the newest shard's Nextflow log, shaped like
+    trace rows (start_ts from the submission, complete_ts = now) so they concatenate with it.
+    Returns an empty frame when the log is missing, unparseable, or too stale to mean anything
+    is still running -- callers then fall back to marking the region incomplete instead."""
+    logs = sorted(glob.glob(os.path.join(run_dir, "logs", "nextflow.*.log")),
+                  key=os.path.getmtime) if run_dir else []
+    if not logs:
+        return pd.DataFrame()
+    path = logs[-1]
+    mtime = os.path.getmtime(path)
+    if time.time() - mtime > _INFLIGHT_MAX_LOG_AGE_S:
+        return pd.DataFrame()
+
+    submitted, completed = {}, set()
+    try:
+        with open(path, errors="replace") as handle:
+            for line in handle:
+                if "Submitted process > " in line:
+                    match = _SUBMITTED_RE.match(line)
+                    if match:
+                        submitted[match.group(2)] = (match.group(1), match.group(3).split(":")[-1])
+                elif "Task completed >" in line:
+                    match = _COMPLETED_RE.search(line)
+                    if match:
+                        parts = match.group(1).rstrip("]").rstrip("/").split("/")
+                        if len(parts) >= 2:
+                            completed.add(f"{parts[-2]}/{parts[-1][:6]}")
+    except OSError:
+        return pd.DataFrame()
+
+    live = [(stamp, proc) for key, (stamp, proc) in submitted.items() if key not in completed]
+    if not live:
+        return pd.DataFrame()
+
+    df = pd.DataFrame(live, columns=["stamp", "process"])
+    df["start_ts"] = _log_ts_to_utc(df["stamp"], mtime)
+    df = df.dropna(subset=["start_ts"]).drop(columns=["stamp"])
+    if df.empty:
+        return df
+    df["complete_ts"] = now
+    # cpus/memory are per-process constants, so take them from what the trace has already
+    # recorded for that process rather than re-reading the Nextflow config.
+    declared = (rows.groupby("process")[["cpus", "memory_bytes"]].max()
+                if not rows.empty else pd.DataFrame(columns=["cpus", "memory_bytes"]))
+    df["cpus"] = df["process"].map(declared.get("cpus", pd.Series(dtype=float))).fillna(1.0)
+    df["memory_bytes"] = df["process"].map(declared.get("memory_bytes", pd.Series(dtype=float))).fillna(0.0)
+    # %cpu is only measured at completion. Leaving it NaN keeps these tasks out of the
+    # "actually used" curve rather than inventing a figure for them -- which is why that curve
+    # is labelled as covering completed tasks only.
+    df["pct_cpu"] = float("nan")
+    return df
+
+
 def snapshot(args, reader):
     total = args.total or count_accessions(args.manifest)
     halves, counts, rows, failed = reader.load()
@@ -413,9 +497,21 @@ def snapshot(args, reader):
         rows = rows.copy()
         rows["n_accessions"] = total
         sysmem = load_system_memory(args.system_memory, total)
+        now = pd.Timestamp.now("UTC").tz_convert(None)
+        inflight = read_inflight(args.run_dir, rows, now)
+        if inflight.empty:
+            # Couldn't recover the running tasks, so the trace's own blind spot stands: every
+            # moment within one longest-task of the newest completion may be missing tasks that
+            # have not finished yet. Mark it rather than drawing it as measurement.
+            longest = (rows["complete_ts"] - rows["start_ts"]).max()
+            cpu_rows, incomplete_after = rows, (rows["complete_ts"].max() - longest
+                                                if pd.notna(longest) else None)
+        else:
+            inflight["n_accessions"] = total
+            cpu_rows, incomplete_after = pd.concat([rows, inflight], ignore_index=True), None
         render_with(pb.plot_cpu_utilization, "cpu_utilization", args.out_dir, "04_cpu_utilization",
-                    rows, sysmem, args.out_dir, total_cpus=args.total_cpus,
-                    memory_limit_gb=args.memory_limit_gb)
+                    cpu_rows, sysmem, args.out_dir, total_cpus=args.total_cpus,
+                    memory_limit_gb=args.memory_limit_gb, incomplete_after=incomplete_after)
         colors = pb.stage_color_map(rows["process"].dropna().unique())
         # plot_benchmark's timeline samples the earliest-starting accessions, which for a run in
         # progress means the oldest thing on screen. Ask for the most recently started ones
