@@ -116,7 +116,7 @@ if [ -z "${NO_TMUX:-}" ] && [ -z "${TMUX:-}" ] && [ "$dry_run" -eq 0 ]; then
             exit 1
         fi
         tmux new-session -d -s "$session" \
-            "NO_TMUX=1 PATH=$(printf '%q' "$PATH") SKIP_UNIT_TEST=$(printf '%q' "${SKIP_UNIT_TEST:-}") NF_EXTRA_ARGS=$(printf '%q' "${NF_EXTRA_ARGS:-}") $(printf '%q ' "${BASH_SOURCE[0]}" ${original_args[@]+"${original_args[@]}"})"
+            "NO_TMUX=1 PATH=$(printf '%q' "$PATH") SKIP_UNIT_TEST=$(printf '%q' "${SKIP_UNIT_TEST:-}") NF_EXTRA_ARGS=$(printf '%q' "${NF_EXTRA_ARGS:-}") NXF_OPTS=$(printf '%q' "${NXF_OPTS:-}") $(printf '%q ' "${BASH_SOURCE[0]}" ${original_args[@]+"${original_args[@]}"})"
         echo "Started in detached tmux session '$session' -- it keeps running if your SSH session drops."
         echo "  Watch it:            tmux attach -t $session      (detach again with Ctrl-b d)"
         echo "  Pause after shard:   touch $run_dir/PAUSE"
