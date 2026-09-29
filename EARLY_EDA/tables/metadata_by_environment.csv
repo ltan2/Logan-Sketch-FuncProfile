@@ -1,0 +1,864 @@
+environment,n_samples,n_studies,median_fields,pct_country,pct_disease,pct_age,pct_env_biome
+human_gut,21830,1488,6.0,87.4,5.2,18.6,48.9
+other:metagenome,3726,793,4.0,76.7,1.1,3.9,31.3
+human_unspecified_site,2873,340,4.0,83.0,9.2,10.2,22.1
+other:soil metagenome,2859,947,4.0,91.4,0.0,2.3,35.3
+animal_gut:Mus musculus,2500,385,6.0,83.8,1.8,20.0,39.5
+human_respiratory,1185,169,5.0,74.0,3.9,10.0,18.6
+other:gut metagenome,1110,122,2.0,49.6,3.1,9.4,38.7
+human_oral,1013,160,5.0,89.2,11.2,35.8,47.7
+human_skin,963,70,7.0,97.6,1.0,17.0,67.3
+other:marine metagenome,951,279,6.0,77.1,0.0,0.0,53.0
+animal_gut:Sus scrofa,734,88,8.0,97.0,5.4,5.3,62.7
+other:wastewater metagenome,713,159,4.0,97.5,0.0,0.0,25.2
+animal_gut:Gallus gallus,562,72,8.0,97.0,8.0,19.9,54.6
+other:sediment metagenome,534,184,5.0,92.3,0.0,0.0,42.7
+other:freshwater metagenome,523,199,5.0,96.2,0.0,0.0,47.2
+other:oral metagenome,464,16,2.0,21.8,1.5,1.7,13.8
+other:synthetic metagenome,382,67,4.0,50.8,0.0,0.3,24.3
+human_vaginal,365,51,6.0,91.0,1.4,11.2,52.6
+animal_gut:Canis lupus familiaris,279,26,7.0,96.8,1.1,14.3,52.3
+human_blood,261,64,5.0,92.0,16.5,11.5,16.9
+conflict:organism_vs_host,257,36,5.0,97.7,0.4,1.6,28.0
+other:air metagenome,235,46,6.0,96.2,0.0,0.0,56.2
+other:plant metagenome,233,90,5.0,93.1,0.0,1.3,21.9
+animal_gut:Equus caballus,226,7,8.0,100.0,0.0,3.1,90.7
+other:food metagenome,225,60,4.0,87.6,2.2,0.0,42.7
+other:aquatic metagenome,218,78,5.0,92.2,10.1,0.0,48.6
+animal_gut:Bos taurus,217,51,5.0,84.3,4.1,14.3,25.3
+other:seawater metagenome,213,112,4.0,89.7,0.0,0.0,31.5
+other:vaginal metagenome,211,10,6.0,100.0,0.5,2.4,97.2
+other:bioreactor metagenome,203,84,4.0,92.1,0.0,0.0,26.6
+other:freshwater sediment metagenome,172,63,4.0,100.0,0.0,0.0,23.3
+other:feces metagenome,162,32,5.0,83.3,27.2,14.8,50.6
+other:rhizosphere metagenome,154,100,5.0,88.3,2.6,2.6,21.4
+other:bovine gut metagenome,152,33,5.0,98.7,0.0,6.6,14.5
+other:clinical metagenome,149,2,5.0,100.0,0.0,0.0,100.0
+other:bovine metagenome,139,22,6.0,99.3,9.4,17.3,21.6
+other:dust metagenome,139,10,4.0,99.3,0.0,0.0,5.0
+other:urban metagenome,132,6,2.0,78.8,0.0,0.0,0.8
+other:lake water metagenome,131,72,7.0,100.0,0.0,0.0,74.0
+other:food fermentation metagenome,130,41,5.0,93.1,0.0,0.0,46.9
+other:insect metagenome,121,42,5.0,100.0,0.0,0.0,23.1
+other:marine sediment metagenome,112,71,7.0,95.5,0.0,0.0,64.3
+other:indoor metagenome,108,20,5.0,93.5,0.0,1.9,47.2
+other:invertebrate metagenome,107,17,2.0,86.9,0.0,0.0,21.5
+human_urine,105,20,5.0,91.4,2.9,35.2,11.4
+animal_gut:Meleagris gallopavo,102,5,9.0,100.0,0.0,0.0,82.4
+other:viral metagenome,100,27,5.0,99.0,0.0,0.0,23.0
+other:activated sludge metagenome,99,51,4.0,96.0,0.0,0.0,31.3
+other:biofilm metagenome,94,50,4.0,90.4,2.1,0.0,24.5
+other:mollusc metagenome,93,16,6.0,100.0,0.0,0.0,4.3
+other:root metagenome,88,29,5.0,81.8,0.0,0.0,25.0
+other:peat metagenome,88,59,4.0,100.0,0.0,0.0,43.2
+other:groundwater metagenome,79,39,7.0,97.5,0.0,0.0,64.6
+other:sludge metagenome,78,57,4.0,74.4,0.0,0.0,7.7
+other:bacterium,72,7,7.0,100.0,0.0,0.0,97.2
+other:hot springs metagenome,68,43,5.0,98.5,0.0,0.0,42.6
+animal_gut:Rattus norvegicus,65,28,5.0,93.8,9.2,7.7,35.4
+other:blood metagenome,59,8,2.0,96.6,0.0,0.0,1.7
+other:mouse metagenome,58,27,4.0,87.9,1.7,8.6,24.1
+human_milk,57,14,4.0,96.5,1.8,15.8,33.3
+human_tissue_unspecified,55,13,5.0,100.0,0.0,3.6,20.0
+animal_gut:Felis catus,55,13,5.0,98.2,0.0,10.9,36.4
+other:skin metagenome,52,12,5.0,96.2,0.0,0.0,13.5
+other:anaerobic digester metagenome,51,38,4.0,96.1,0.0,0.0,25.5
+other:microbial mat metagenome,49,17,7.0,100.0,0.0,0.0,34.7
+other:pig metagenome,47,14,4.0,91.5,0.0,6.4,23.4
+other:fermentation metagenome,47,16,2.0,95.7,0.0,0.0,14.9
+other:fish metagenome,46,11,3.5,93.5,2.2,6.5,13.0
+other:rodent metagenome,46,4,3.0,100.0,0.0,0.0,0.0
+other:compost metagenome,44,28,4.0,95.5,0.0,2.3,6.8
+other:food production metagenome,43,12,5.0,86.0,0.0,0.0,48.8
+other:leaf metagenome,42,12,5.0,100.0,0.0,0.0,40.5
+other:sponge metagenome,41,22,5.0,100.0,31.7,0.0,48.8
+animal_gut:Salmo salar,40,3,10.0,100.0,97.5,2.5,65.0
+other:coral metagenome,39,20,7.0,97.4,7.7,0.0,61.5
+animal_gut:Pan troglodytes schweinfurthii,38,2,7.0,100.0,0.0,0.0,97.4
+animal_gut:Pan troglodytes troglodytes,38,2,7.0,100.0,0.0,0.0,94.7
+other:coral reef metagenome,38,8,5.0,100.0,0.0,0.0,44.7
+other:phyllosphere metagenome,37,23,5.0,86.5,0.0,0.0,2.7
+other:estuary metagenome,35,16,7.0,100.0,0.0,0.0,54.3
+other:manure metagenome,35,11,6.0,91.4,0.0,0.0,60.0
+animal_gut:Pan paniscus,35,1,7.0,100.0,0.0,0.0,100.0
+other:mosquito metagenome,34,12,4.0,100.0,0.0,0.0,11.8
+other:riverine metagenome,34,15,4.0,100.0,0.0,0.0,20.6
+other:salt marsh metagenome,33,13,7.0,100.0,0.0,0.0,69.7
+other:tick metagenome,33,13,4.0,100.0,3.0,0.0,3.0
+other:drinking water metagenome,33,14,4.0,100.0,0.0,0.0,39.4
+other:milk metagenome,32,13,5.0,71.9,0.0,0.0,6.2
+other:mixed culture metagenome,32,17,4.0,81.2,0.0,0.0,37.5
+animal_gut:Macaca mulatta,30,12,5.0,96.7,0.0,13.3,36.7
+other:bird metagenome,30,7,3.0,90.0,0.0,0.0,3.3
+other:hydrothermal vent metagenome,30,21,5.5,96.7,0.0,0.0,50.0
+other:glacier metagenome,30,6,5.0,33.3,0.0,0.0,90.0
+other:mammal metagenome,30,4,5.0,93.3,0.0,0.0,0.0
+other:subsurface metagenome,28,15,4.0,96.4,0.0,0.0,39.3
+other:sheep metagenome,27,9,4.0,85.2,22.2,0.0,0.0
+other:fossil metagenome,27,4,3.0,70.4,0.0,0.0,3.7
+animal_gut:zebrafish,26,1,5.0,100.0,0.0,0.0,0.0
+other:meat metagenome,26,3,5.0,100.0,0.0,0.0,65.4
+other:algae metagenome,26,16,6.5,100.0,19.2,0.0,53.8
+other:riemerella anatipestifer,25,1,7.0,100.0,0.0,0.0,100.0
+other:honey metagenome,25,6,4.0,84.0,0.0,0.0,0.0
+other:marine plankton metagenome,25,7,5.0,100.0,0.0,0.0,48.0
+other:fish gut metagenome,24,2,3.0,100.0,0.0,0.0,0.0
+other:permafrost metagenome,23,11,7.0,95.7,0.0,0.0,56.5
+animal_gut:Macaca fascicularis,23,4,9.0,100.0,4.3,52.2,52.2
+other:surface metagenome,23,7,4.0,100.0,0.0,0.0,8.7
+animal_gut:Ovis aries,23,12,5.0,73.9,0.0,0.0,4.3
+animal_gut:Apis mellifera,23,9,5.0,100.0,0.0,0.0,34.8
+animal_gut:Capra hircus,23,12,5.0,87.0,0.0,0.0,4.3
+other:wetland metagenome,23,21,4.0,100.0,0.0,0.0,8.7
+animal_gut:Bubalus bubalis,22,1,4.0,63.6,0.0,0.0,0.0
+animal_gut:Myodes glareolus,22,2,6.0,100.0,0.0,0.0,90.9
+other:hospital metagenome,21,4,4.0,100.0,0.0,0.0,0.0
+other:fungus metagenome,19,15,3.0,100.0,0.0,0.0,0.0
+other:rock metagenome,19,14,4.0,73.7,0.0,0.0,0.0
+other:lung metagenome,19,9,2.0,57.9,0.0,0.0,21.1
+animal_gut:Emys orbicularis,18,1,6.0,100.0,0.0,0.0,0.0
+"animal_gut:5xFAD (B6.Cg-Tg(APPSwFlLon,PSEN1*M146L*L286V)6799Vas/Mmjax, Stock number 34848-JAX, MMRRC)",18,1,6.0,100.0,0.0,0.0,0.0
+other:factory metagenome,18,1,6.0,100.0,0.0,0.0,100.0
+other:moss metagenome,18,10,4.5,100.0,0.0,0.0,38.9
+other:upper respiratory tract metagenome,17,7,4.0,76.5,0.0,0.0,0.0
+other:annelid metagenome,17,3,7.0,100.0,0.0,0.0,94.1
+other:punctelia rudecta,17,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:insect,17,5,6.0,100.0,0.0,0.0,100.0
+other:cave metagenome,16,6,4.0,93.8,0.0,0.0,43.8
+other:symbiont metagenome,16,6,8.0,87.5,0.0,0.0,81.2
+other:ice metagenome,16,14,4.0,87.5,0.0,0.0,6.2
+other:aquaculture metagenome,16,8,4.0,93.8,0.0,0.0,31.2
+other:salt lake metagenome,15,15,4.0,100.0,0.0,0.0,0.0
+other:hypersaline lake metagenome,15,10,6.0,93.3,0.0,0.0,60.0
+other:metagenomes,15,7,2.0,60.0,0.0,6.7,20.0
+other:oyster metagenome,14,10,5.0,100.0,0.0,7.1,35.7
+animal_gut:Dairy cattle,14,2,4.0,0.0,0.0,0.0,0.0
+other:mine drainage metagenome,14,7,4.0,85.7,0.0,0.0,7.1
+animal_gut:Ursus americanus,14,1,5.0,100.0,0.0,0.0,0.0
+other:gill metagenome,14,3,3.0,100.0,0.0,0.0,0.0
+other:biocrust metagenome,13,6,4.0,100.0,0.0,0.0,30.8
+other:bioreactor sludge metagenome,13,10,6.0,100.0,0.0,0.0,61.5
+animal_gut:Giant panda and red panda,13,1,5.0,100.0,0.0,0.0,0.0
+other:terrestrial metagenome,13,6,6.0,100.0,0.0,0.0,15.4
+animal_gut:Chlorocebus sabaeus,13,1,5.0,0.0,0.0,0.0,0.0
+animal_gut:Bos mutus,13,1,3.0,100.0,0.0,0.0,0.0
+other:wine metagenome,13,4,0.0,38.5,0.0,0.0,7.7
+other:primate metagenome,13,3,8.0,100.0,0.0,0.0,53.8
+other:silage metagenome,12,4,4.0,100.0,0.0,0.0,0.0
+other:sheep gut metagenome,12,8,5.0,100.0,0.0,0.0,0.0
+other:poultry litter metagenome,12,2,2.0,100.0,0.0,0.0,0.0
+other:rumen metagenome,12,7,5.0,100.0,0.0,0.0,25.0
+animal_gut:panda,12,1,5.0,100.0,0.0,0.0,0.0
+other:brine metagenome,12,5,2.0,100.0,0.0,0.0,0.0
+other:marsh metagenome,12,10,4.0,100.0,0.0,0.0,0.0
+other:lepraria finkii,12,1,7.0,100.0,0.0,0.0,100.0
+other:beach sand metagenome,12,6,5.5,91.7,0.0,0.0,50.0
+other:mangrove metagenome,11,6,4.0,100.0,0.0,0.0,36.4
+other:ant metagenome,11,11,4.0,90.9,0.0,0.0,0.0
+animal_gut:Ochotona curzoniae,11,5,5.0,100.0,0.0,0.0,0.0
+other:aquatic viral metagenome,11,4,5.0,100.0,0.0,0.0,36.4
+animal_gut:Bos indicus,11,2,6.0,100.0,0.0,0.0,63.6
+animal_gut:Phascolarctos cinereus,11,3,7.0,63.6,0.0,36.4,63.6
+other:rat metagenome,10,6,2.0,20.0,0.0,0.0,0.0
+animal_gut:Hoolock tianxing,10,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:fish,10,6,3.0,70.0,0.0,0.0,0.0
+other:farm metagenome,10,2,4.0,100.0,0.0,0.0,0.0
+other:museum specimen metagenome,10,1,4.0,100.0,0.0,0.0,0.0
+other:canine metagenome,10,5,6.0,100.0,0.0,40.0,40.0
+other:eye metagenome,10,3,6.5,100.0,20.0,0.0,70.0
+other:biofilter metagenome,9,7,4.0,100.0,0.0,0.0,44.4
+other:bat metagenome,9,5,3.0,100.0,0.0,0.0,0.0
+other:lepraria lanata,9,1,7.0,100.0,0.0,0.0,100.0
+other:plastisphere metagenome,9,4,4.0,100.0,0.0,0.0,11.1
+other:phage metagenome,9,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Sow,9,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Tursiops truncatus,9,1,11.0,100.0,0.0,100.0,100.0
+other:bee metagenome,9,6,5.0,100.0,0.0,0.0,33.3
+other:hydrocarbon metagenome,8,4,6.0,100.0,0.0,0.0,75.0
+animal_gut:Sciurus vulgaris,8,1,7.0,100.0,0.0,0.0,100.0
+other:snake metagenome,8,3,4.5,62.5,0.0,0.0,0.0
+other:respiratory tract metagenome,8,3,4.0,100.0,0.0,0.0,0.0
+other:pond metagenome,8,5,7.0,100.0,0.0,0.0,62.5
+other:wood metagenome,8,2,4.0,100.0,0.0,0.0,0.0
+other:spacecraft metagenome,8,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Canis lupus,8,2,5.0,100.0,0.0,0.0,0.0
+other:pancrustacean metagenome,8,2,3.5,100.0,0.0,0.0,0.0
+other:macroalgae metagenome,8,2,7.0,100.0,0.0,0.0,100.0
+other:urine metagenome,8,3,3.0,100.0,0.0,0.0,0.0
+other:whole organism metagenome,8,3,5.0,100.0,0.0,0.0,0.0
+animal_gut:Ailuropoda melanoleuca,8,4,3.0,62.5,0.0,0.0,25.0
+animal_gut:Pan troglodytes,8,2,5.0,100.0,0.0,0.0,0.0
+animal_gut:Rhinopithecus roxellana,8,4,6.0,100.0,0.0,0.0,50.0
+animal_gut:Rattus,8,1,7.0,100.0,0.0,0.0,100.0
+other:macaca mulatta,7,1,6.0,100.0,0.0,0.0,100.0
+other:lichen metagenome,7,5,4.0,100.0,0.0,0.0,42.9
+animal_gut:Penaeus vannamei,7,4,5.0,100.0,0.0,0.0,14.3
+animal_gut:diarrhea piglets,7,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Propithecus coquereli,7,2,7.0,100.0,0.0,14.3,100.0
+other:food contamination metagenome,7,3,3.0,57.1,0.0,0.0,0.0
+other:clostridiales bacterium,7,1,7.0,100.0,0.0,0.0,100.0
+other:leaf litter metagenome,7,6,4.0,100.0,0.0,0.0,0.0
+other:wood decay metagenome,6,2,7.0,100.0,0.0,0.0,83.3
+animal_gut:Bombus impatiens,6,2,10.0,100.0,0.0,66.7,66.7
+other:parasite metagenome,6,1,2.0,83.3,0.0,0.0,0.0
+other:plastic metagenome,6,5,4.5,83.3,0.0,0.0,16.7
+animal_gut:Brand's vole,6,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Gorilla gorilla gorilla,6,3,5.0,100.0,0.0,0.0,0.0
+other:boletus edulis,6,1,1.0,0.0,0.0,0.0,0.0
+other:biogas fermenter metagenome,6,5,4.0,100.0,0.0,0.0,16.7
+animal_gut:Gasterosteus aculeatus,6,1,10.0,100.0,100.0,0.0,100.0
+animal_gut:piglet,6,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:isopod,6,3,3.0,0.0,0.0,0.0,0.0
+animal_gut:homo_sapines,6,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Marmot,6,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Zebrafish,6,2,7.0,100.0,0.0,0.0,83.3
+animal_gut:stomach,6,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Papio cynocephalus,6,3,9.0,100.0,0.0,16.7,83.3
+animal_gut:Podarcis muralis,6,1,6.5,100.0,0.0,0.0,100.0
+animal_gut:Apis cerana,6,2,5.0,100.0,0.0,0.0,100.0
+animal_gut:Duck,5,2,5.0,100.0,0.0,0.0,0.0
+animal_gut:Capra aegagrus hircus,5,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Mus,5,1,9.0,100.0,0.0,100.0,100.0
+other:synechococcus sp.,5,1,8.0,100.0,0.0,0.0,100.0
+other:rabbit gut metagenome,5,1,7.0,100.0,0.0,0.0,100.0
+other:prochlorococcus marinus,5,1,8.0,100.0,0.0,0.0,100.0
+other:punctelia appalachensis,5,1,7.0,100.0,0.0,0.0,100.0
+other:mycoplasma sp.,5,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:SWISS_mice,5,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Oncorhynchus mykiss,5,1,4.0,100.0,0.0,0.0,0.0
+other:mine metagenome,5,2,10.0,100.0,0.0,0.0,80.0
+other:runoff metagenome,5,4,2.0,100.0,0.0,0.0,0.0
+other:clothing metagenome,5,3,2.0,100.0,0.0,0.0,0.0
+animal_gut:yak,5,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Sciurus carolinensis,5,1,7.0,100.0,0.0,0.0,100.0
+other:cold seep metagenome,5,4,4.0,100.0,0.0,0.0,20.0
+animal_gut:Rhizomys pruinosus,5,1,6.0,100.0,0.0,100.0,0.0
+animal_gut:brown bear,5,1,5.0,100.0,0.0,0.0,0.0
+other:feline metagenome,5,5,2.0,0.0,0.0,0.0,0.0
+animal_gut:Pseudois nayaur,5,2,2.0,40.0,0.0,0.0,0.0
+other:horse metagenome,5,3,5.0,100.0,0.0,0.0,0.0
+animal_gut:Holstein cows,5,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Desmodus rotundus,5,1,5.0,100.0,0.0,0.0,0.0
+other:bacteroidales bacterium,5,3,7.0,100.0,0.0,0.0,100.0
+animal_gut:Ovis aries (pure grazing),4,1,5.0,100.0,0.0,0.0,0.0
+other:medical device metagenome,4,1,5.0,100.0,0.0,0.0,0.0
+other:lactobacillus iners,4,1,8.0,100.0,100.0,0.0,100.0
+other:eubacteriales,4,1,4.0,100.0,0.0,0.0,100.0
+animal_gut:Suis scrofa,4,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:adult goat,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Lamb,4,1,11.0,100.0,0.0,100.0,100.0
+animal_gut:healthy parturient,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:small intestine,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:large intestine,4,1,5.0,100.0,0.0,0.0,0.0
+other:root nodule metagenome,4,2,6.0,100.0,0.0,0.0,0.0
+animal_gut:Water deer,4,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:beagle,4,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Weaning pig,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:animal,4,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Gymnogyps californianus,4,1,5.0,100.0,0.0,0.0,0.0
+other:crab metagenome,4,2,4.5,100.0,0.0,0.0,0.0
+animal_gut:DBA/1 mice,4,1,4.0,100.0,0.0,0.0,0.0
+other:lagoon metagenome,4,2,7.0,100.0,0.0,0.0,100.0
+animal_gut:C57/BL6 mouse,4,1,8.0,100.0,0.0,0.0,100.0
+other:soda lake metagenome,4,3,5.0,100.0,0.0,0.0,0.0
+other:straw metagenome,4,3,4.5,100.0,0.0,0.0,0.0
+animal_gut:Military dog,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Callithrix jacchus,4,3,9.0,100.0,50.0,0.0,75.0
+animal_gut:Anguilla anguilla,4,1,9.0,100.0,0.0,100.0,100.0
+other:rice paddy metagenome,4,4,5.0,100.0,0.0,0.0,25.0
+animal_gut:Bombus terrestris,4,2,6.0,100.0,0.0,0.0,100.0
+animal_gut:Macaca mulatta brevicaudus,4,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Moose,4,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Cervus nippon,4,2,5.0,75.0,0.0,0.0,0.0
+animal_gut:Megaptera novaeangliae,4,1,8.0,100.0,0.0,0.0,100.0
+other:sea cucumber metagenome,4,1,3.0,100.0,0.0,0.0,0.0
+other:halite metagenome,4,3,5.0,100.0,0.0,0.0,0.0
+animal_gut:Holstein X Jersey cow,4,1,4.0,100.0,0.0,0.0,100.0
+other:lyssavirus rabies,4,1,8.0,100.0,0.0,0.0,100.0
+other:ovine metagenome,4,2,5.0,100.0,0.0,0.0,25.0
+animal_gut:Rhinopithecus bieti,3,2,6.0,100.0,0.0,0.0,100.0
+animal_gut:Partridge chicken,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Pelophylax nigromaculatus,3,1,5.0,100.0,0.0,0.0,0.0
+other:oil metagenome,3,1,4.0,100.0,0.0,0.0,0.0
+other:oil field metagenome,3,3,4.0,100.0,0.0,0.0,0.0
+animal_gut:Nipponia nippon,3,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Calves,3,1,1.0,0.0,0.0,0.0,0.0
+animal_gut:C57BL/6NTac,3,1,5.0,100.0,0.0,0.0,0.0
+other:probiotic metagenome,3,2,4.0,100.0,0.0,0.0,0.0
+other:prokaryote coculture,3,1,6.0,100.0,0.0,0.0,100.0
+other:outdoor metagenome,3,3,4.0,100.0,0.0,0.0,0.0
+animal_gut:Anser indicus,3,3,3.0,100.0,0.0,0.0,33.3
+animal_gut:Bostaurus,3,2,5.0,100.0,0.0,0.0,0.0
+other:rhizoplaca arbuscula,3,1,1.0,100.0,0.0,0.0,0.0
+animal_gut:Physeter macrocephalus,3,2,5.0,100.0,0.0,0.0,33.3
+animal_gut:Periplaneta americana,3,1,9.0,100.0,0.0,0.0,100.0
+other:money metagenome,3,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Oryctolagus cuniculus,3,1,5.0,100.0,0.0,0.0,0.0
+other:oil production facility metagenome,3,3,6.0,100.0,0.0,0.0,66.7
+animal_gut:newborn goat,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Kyphosus sydneyanus,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Hy-Ling brown laying hens,3,1,4.0,100.0,0.0,0.0,100.0
+animal_gut:Yellow hair chicken,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Junggar Bactrian Camel,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:bee,3,1,5.0,100.0,0.0,0.0,0.0
+other:bacteroides fragilis,3,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Lissotriton helveticus,3,1,6.0,100.0,0.0,0.0,100.0
+other:termite gut metagenome,3,3,4.0,100.0,0.0,0.0,0.0
+animal_gut:primate,3,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:Homo sapiens (infant),3,1,6.0,100.0,0.0,100.0,0.0
+other:wildlife metagenome,3,2,3.0,100.0,0.0,0.0,0.0
+animal_gut:Acrossocheilus fasciatus,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:rattus,3,1,5.0,100.0,0.0,0.0,0.0
+other:biofloc metagenome,3,3,5.0,100.0,0.0,0.0,0.0
+other:escherichia coli,3,2,8.0,100.0,0.0,0.0,100.0
+animal_gut:Yak,3,2,5.0,66.7,0.0,0.0,0.0
+other:tidal flat metagenome,3,3,4.0,100.0,0.0,0.0,0.0
+other:sand metagenome,3,2,8.0,100.0,0.0,0.0,100.0
+other:bog metagenome,3,2,4.0,100.0,0.0,0.0,33.3
+animal_gut:Yunnan goat,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:piglets,3,1,5.0,100.0,0.0,0.0,0.0
+other:abattoir metagenome,3,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Psittacula echo,3,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Gazella subgutturosa,3,1,5.0,100.0,0.0,0.0,0.0
+other:hyphosphere metagenome,3,1,4.0,100.0,0.0,0.0,0.0
+other:crocidura lasiura,3,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Spermophilus dauricus,3,1,2.0,0.0,0.0,0.0,0.0
+other:ciliate metagenome,3,1,9.0,100.0,0.0,0.0,100.0
+other:candidatus williamhamiltonella defendens,3,1,5.0,100.0,0.0,0.0,0.0
+other:citrus x paradisi x citrus trifoliata,3,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:calf,3,2,7.0,100.0,0.0,66.7,0.0
+other:canis lupus familiaris,3,1,4.0,0.0,0.0,0.0,100.0
+animal_gut:Podarcis gaigeae,3,1,7.0,100.0,0.0,0.0,100.0
+other:invertebrate gut metagenome,3,3,4.0,100.0,0.0,0.0,0.0
+animal_gut:Donkey,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Vespertilio sinensis,3,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Elephas maximus,3,3,4.0,100.0,0.0,0.0,33.3
+animal_gut:Eidolon helvum,3,1,9.0,100.0,0.0,100.0,100.0
+animal_gut:Panthera uncia,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Anaxyrus americanus,2,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Bengal tiger,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Anser sp.,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Bos_taurus,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Birgus latro,2,1,8.0,100.0,0.0,0.0,100.0
+other:rhizoplaca cf. idahoensis,2,1,1.0,100.0,0.0,0.0,0.0
+other:reproductive system metagenome,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Apis mellifera carnica,2,1,7.0,100.0,0.0,100.0,100.0
+animal_gut:Cervus canadensis nannodes,2,2,5.0,100.0,0.0,0.0,0.0
+animal_gut:Ctenopharyngodon idella,2,1,5.0,100.0,0.0,0.0,0.0
+other:mycobacterium avium subsp. hominissuis,2,1,2.0,100.0,0.0,0.0,0.0
+other:mus musculus,2,2,6.0,100.0,0.0,0.0,100.0
+animal_gut:Cygnus cygnus,2,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Chelonoidis porteri,2,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:C57B6,2,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Castor canadensis,2,2,5.0,100.0,0.0,0.0,0.0
+animal_gut:Cervus albirostris,2,1,2.0,0.0,0.0,0.0,0.0
+other:tailings metagenome,2,2,4.5,100.0,0.0,0.0,0.0
+animal_gut:Lepus europaeus,2,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:Otaria flavescens,2,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Mungos mungo,2,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Lasiorhinus latifrons,2,2,7.0,100.0,0.0,0.0,50.0
+other:synthetic construct,2,1,3.0,0.0,0.0,0.0,0.0
+other:solid waste metagenome,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Casuarius casuarius,2,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Apis florea,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Macaca sp.,2,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Lithobates pipiens,2,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:C57BL/6,2,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Macaca fuscata,2,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Lampsilis pectorosa,2,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Larimichthys crocea,2,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Danio rerio,2,2,3.5,50.0,0.0,0.0,0.0
+animal_gut:Oryzias latipes,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Orycteropus afer,2,2,5.0,100.0,0.0,0.0,0.0
+animal_gut:Oreochromis niloticus,2,2,2.0,100.0,0.0,0.0,0.0
+animal_gut:Pipistrellus pipistrellus,2,2,6.5,100.0,0.0,0.0,50.0
+animal_gut:Papio kindae,2,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Pantholops hodgsonii,2,1,2.0,0.0,0.0,0.0,0.0
+other:fertilizer metagenome,2,2,3.0,50.0,0.0,0.0,0.0
+animal_gut:Simmental cattle,2,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:earthworm,2,1,3.0,0.0,0.0,0.0,0.0
+other:candidatus methanoperedens sp.,2,1,7.0,100.0,0.0,0.0,100.0
+other:candidatus pelagibacter sp.,2,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Guangxi goat,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Eisenia fetida,2,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Holstein cow,2,1,1.0,0.0,0.0,0.0,0.0
+animal_gut:Sprague-Dawley rats,2,1,4.0,0.0,0.0,0.0,100.0
+animal_gut:Trachypithecus francoisi,2,2,5.0,100.0,0.0,0.0,50.0
+animal_gut:Toxispathius auriventris,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Termes hospes,2,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Tympanuchus phasianellus,2,1,7.0,100.0,0.0,100.0,0.0
+animal_gut:Hippodamia convergens,2,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Podarcis pityusensis,2,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Herder,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Heterocephalus glaber,2,1,9.0,100.0,0.0,100.0,100.0
+other:liver metagenome,2,2,2.5,100.0,0.0,0.0,0.0
+animal_gut:Cyprinus carpio,2,2,4.5,100.0,0.0,0.0,0.0
+animal_gut:Plautia stali,2,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Tadorna ferruginea,2,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Perca flavescens,2,1,5.0,100.0,0.0,0.0,0.0
+other:frog metagenome,2,2,4.5,100.0,0.0,0.0,0.0
+other:ecological metagenomes,2,1,3.0,0.0,0.0,0.0,0.0
+other:lachnospiraceae,2,1,4.0,100.0,0.0,0.0,100.0
+animal_gut:LAMB,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Rattus rattus,2,2,6.0,100.0,0.0,0.0,50.0
+animal_gut:Pycnoscelus surinamensis,2,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Roe deer,2,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Rhodnius prolixus,2,1,8.0,100.0,100.0,0.0,100.0
+animal_gut:Setophaga striata,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Harmonia axyridis,2,2,6.0,100.0,0.0,0.0,0.0
+animal_gut:m.musculus,2,1,3.0,100.0,0.0,0.0,0.0
+other:biosolids metagenome,2,2,5.0,100.0,0.0,0.0,50.0
+other:bacteroidota bacterium,2,2,4.0,50.0,0.0,0.0,50.0
+other:bacteroidaceae bacterium,2,2,7.0,100.0,0.0,0.0,100.0
+animal_gut:Herbivorous mammals,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F351,2,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F190,2,1,6.0,100.0,0.0,0.0,0.0
+other:coal metagenome,2,1,5.0,100.0,0.0,0.0,100.0
+other:bacteroides uniformis,2,2,7.0,100.0,0.0,0.0,100.0
+animal_gut:wildlife,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Achilles tang,2,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:manure,2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Wenchang Chicken,2,1,3.0,100.0,0.0,0.0,0.0
+other:aquifer metagenome,2,2,4.0,100.0,0.0,0.0,0.0
+animal_gut:snail,2,2,3.0,0.0,0.0,0.0,0.0
+animal_gut:Mergus squamatus,2,2,6.5,100.0,0.0,0.0,50.0
+animal_gut:Mesocricetus auratus,2,1,9.0,100.0,0.0,100.0,100.0
+other:usnea subfusca,2,1,7.0,100.0,0.0,0.0,100.0
+other:usnea strigosa,2,1,7.0,100.0,0.0,0.0,100.0
+other:termite metagenome,2,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Alexandromys fortis,2,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Crossbred piglets (Landrace x Yorkshire x Duroc),2,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Coturnix,2,1,6.0,100.0,0.0,100.0,0.0
+animal_gut:Alces?alces,2,1,7.0,100.0,0.0,0.0,100.0
+other:saltern metagenome,2,2,2.0,50.0,0.0,0.0,0.0
+animal_gut:3,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Anas platyrhynchos platyrhynchos,1,1,5.0,100.0,0.0,0.0,0.0
+other:stereocaulon antarcticum,1,1,4.0,100.0,0.0,0.0,100.0
+animal_gut:C57BL/6J mice,1,1,5.0,100.0,0.0,0.0,0.0
+other:uncultured bacterium,1,1,6.0,100.0,0.0,0.0,100.0
+other:thermomicrobium sp. 002898255,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Atlantic salmon,1,1,3.0,100.0,0.0,0.0,0.0
+other:salt metagenome,1,1,2.0,0.0,0.0,0.0,0.0
+other:salt mine metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:salt pan metagenome,1,1,6.0,100.0,0.0,0.0,0.0
+other:root associated fungus metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:rudaea sp.,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Cryptotermes cavifrons,1,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Cryptotermes domesticus,1,1,5.0,100.0,0.0,0.0,0.0
+other:schaereria dolodes,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Local goose,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Lyrodus pedicellatus,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Lateolabrax japonicus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Leghorn chicken,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Macaca_fuscata,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Macrotermes natalensis,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Mandrillus leucophaeus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Manis javanica,1,1,4.0,100.0,0.0,0.0,0.0
+other:psyllid metagenome,1,1,9.0,100.0,0.0,0.0,100.0
+other:pycnora praestabilis,1,1,5.0,100.0,0.0,0.0,100.0
+other:rhizoplaca shushanii,1,1,1.0,100.0,0.0,0.0,0.0
+other:streptococcus sp. rmpru010i7,1,1,4.0,100.0,0.0,0.0,0.0
+other:streptococcus sp. rmpru011i4,1,1,4.0,100.0,0.0,0.0,0.0
+other:stromatolite metagenome,1,1,5.0,100.0,0.0,0.0,100.0
+other:sphingomonas sp. w002,1,1,5.0,100.0,0.0,0.0,100.0
+other:spirochaetaceae bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:prasinovirus,1,1,12.0,100.0,0.0,0.0,100.0
+other:protist metagenome,1,1,3.0,100.0,0.0,0.0,0.0
+other:shewanella putrefaciens,1,1,4.0,100.0,0.0,0.0,0.0
+other:rhizoplaca melanophthalma subsp. crispa,1,1,1.0,100.0,0.0,0.0,0.0
+other:rhizoplaca parilis,1,1,1.0,100.0,0.0,0.0,0.0
+other:rhizoplaca polymorpha,1,1,1.0,100.0,0.0,0.0,0.0
+other:pseudomonadales bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:pseudomonas sp. k35,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Nyctereutes procyonoides,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Leucogeranus leucogeranus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Cavia porcellus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:C57BLKS/J-wt/wt,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Anacanthotermes turkestanicus,1,1,5.0,100.0,0.0,0.0,0.0
+other:stutzerimonas stutzeri,1,1,7.0,100.0,0.0,0.0,100.0
+other:streptococcus sp. ritm021i10,1,1,4.0,100.0,0.0,0.0,0.0
+other:streptococcus sp. ritm052i4,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_CD_S33,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_CD_S40,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_CD_S50,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F116,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:not appplicable,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:pangolin,1,1,7.0,100.0,0.0,0.0,100.0
+other:bacilli bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:bacillota,1,1,0.0,0.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F145,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Microcerotermes sp. mad G JA-2024a,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Micropterus dolomieu,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_67,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_203,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens H29,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_CD_S14,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_CD_S25,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:gut,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_205,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_208,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_210,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_223,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_225,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_247,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_249,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Water buffalo,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:mice34,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_106,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_136,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_162,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_163,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_171,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_174,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:HV473_E09_0936_BDME190635122-1a_HMJJ3DSXX_L1_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV479_F06_0942_BDME190635128-1a_HMJY2DSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV501_I01_0964_BDME190635150-1a_HTLYJDSXX_L4_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV521_B03_0984_BDME190635169-1a_HTMC3DSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Hainan goat,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:HV363_B07_0826_BDME190635016-1a_HMGLJDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+other:amphibian metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:acidobacteriota bacterium,1,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:HV369_C04_0832_BDME190635022-1a_HMGLJDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV407_G06_0870_BDME190635057-1a_HMHMGDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV419_H09_0882_BDME190635069-1a_HTLNHDSXX_L1_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV436_A08_0899_BDME190635086-1a_HMGLJDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV439_B02_0902_BDME190635089-1a_HMHMGDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV443_B06_0906_BDME190635093-1a_HMHMGDSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV468_E04_0931_BDME190635117-1a_HMGLJDSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV228_E07_0691_BDME190634886-1a_HTMC3DSXX_L3,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:snake,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:vulture,1,1,3.0,0.0,0.0,0.0,0.0
+animal_gut:pig C6,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:pig PA4,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:pig PI3,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:lizard,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:sheep manure,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:sheep124,1,1,4.0,0.0,0.0,0.0,0.0
+other:bacillus sp. uanl1552282b,1,1,9.0,100.0,0.0,100.0,100.0
+other:ancylonema sp.,1,1,8.0,100.0,0.0,0.0,100.0
+other:anodontia alba,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:seagull,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_7,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_70,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_80,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_98,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_373,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_382,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_400,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_405,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_51,1,1,5.0,100.0,0.0,0.0,0.0
+other:aquabacterium commune,1,1,5.0,100.0,0.0,0.0,100.0
+other:acutalibacteraceae bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:aerosol metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens H23,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:mouse_57,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens T21,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens T37,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo_sapiens,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Hypomesus transpacificus,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Infant,1,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:mouse_275,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Strongylocentrotus intermedius,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Struthio camelus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Scylla olivacea,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Jinhua pig,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F199,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F228,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F380,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens GER_SNF_F395,1,1,6.0,100.0,0.0,0.0,0.0
+other:bryobacterales bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:bulbothrix sp. dp-2024a,1,1,4.0,100.0,0.0,0.0,0.0
+other:calditrichota bacterium,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Homo sapiens (elderly),1,1,6.0,100.0,0.0,100.0,0.0
+animal_gut:HV470_E06_0933_BDME190635119-1a_HTLNHDSXX_L1_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+other:ant fungus garden metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:aphanizomenon flos-aquae str. klamath,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Strigops habroptila,1,1,5.0,100.0,0.0,0.0,0.0
+"animal_gut:['Macaca mulatta', '4439']",1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:fish metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:giant pandas and other relevant species,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:guinea pig,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:bull,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:catfish12,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Semnopithecus schistaceus,1,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:Shinisaurus crocodilurus,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Rattus tanezumi,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:catfish7,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:dairy,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:dairy cattle,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Zhedong White Goose,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Zophobas morio,1,1,5.0,0.0,0.0,0.0,0.0
+"animal_gut:['Macaca mulatta', '21236']",1,1,7.0,100.0,0.0,0.0,100.0
+"animal_gut:['Macaca mulatta', '27924']",1,1,7.0,100.0,0.0,0.0,100.0
+other:beetle metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:betaproteobacteria bacterium,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Kyphosus vaigiensis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Labiotermes labralis,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Lagopus muta,1,1,6.0,100.0,0.0,0.0,0.0
+other:candidatus accumulibacter adiacens,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:HV229_E08_0692_BDME190634887-1a_HTMC3DSXX_L3,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV235_F05_0698_BDME190634893-1a_HTLNHDSXX_L1,1,1,4.0,100.0,0.0,0.0,0.0
+other:alistipes indistinctus,1,1,7.0,100.0,0.0,0.0,100.0
+other:alkali sediment metagenome,1,1,2.0,100.0,0.0,0.0,0.0
+other:alphaproteobacteria bacterium,1,1,5.0,100.0,0.0,0.0,100.0
+other:ballast water metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:bat paramyxovirus,1,1,7.0,100.0,0.0,0.0,100.0
+other:clathrolucina costata,1,1,8.0,100.0,0.0,0.0,100.0
+other:cnidarian metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:blank sample,1,1,1.0,0.0,0.0,0.0,0.0
+other:candidatus woesearchaeota archaeon,1,1,7.0,100.0,0.0,0.0,100.0
+other:coleofasciculus sp. dsm 104241,1,1,7.0,100.0,0.0,0.0,100.0
+other:cetacean metagenome,1,1,4.0,0.0,0.0,0.0,0.0
+other:chemical production metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:chitinophaga pinensis,1,1,8.0,100.0,0.0,0.0,100.0
+other:circovirus sp. gt10au,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Giant panda,1,1,5.0,0.0,0.0,0.0,100.0
+animal_gut:Giraffa camelopardalis reticulata,1,1,10.0,100.0,0.0,0.0,100.0
+other:candidatus limimorpha sp.,1,1,7.0,100.0,0.0,0.0,100.0
+other:candidatus pelagibacter sp. himb1518,1,1,8.0,100.0,0.0,0.0,100.0
+other:candidatus pelagibacter sp. himb1520,1,1,8.0,100.0,0.0,0.0,100.0
+other:candidatus pelagibacter sp. himb1542,1,1,8.0,100.0,0.0,0.0,100.0
+other:candidatus pelagibacter sp. himb1685,1,1,8.0,100.0,0.0,0.0,100.0
+other:candidatus polarisedimenticolia bacterium,1,1,3.0,0.0,0.0,0.0,0.0
+other:candidatus poseidoniaceae archaeon,1,1,6.0,100.0,0.0,0.0,100.0
+other:candidatus sigynarchaeales archaeon,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Johnius elongatus,1,1,5.0,100.0,0.0,0.0,0.0
+other:fidelibacterota bacterium,1,1,6.0,100.0,0.0,0.0,100.0
+other:endophyte metagenome,1,1,3.0,100.0,0.0,0.0,0.0
+other:endosymbiont of lamellibrachia barhami,1,1,10.0,100.0,0.0,0.0,100.0
+other:epibiont metagenome,1,1,9.0,100.0,0.0,0.0,100.0
+other:candidatus brockarchaeota archaeon,1,1,7.0,100.0,0.0,0.0,100.0
+other:candidatus cryptobacteroides sp.,1,1,7.0,100.0,0.0,0.0,100.0
+other:candidatus kuenenia stuttgartensis,1,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:Sichuan goat,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:delivery room,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:feces,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:HV251_H03_0714_BDME190634909-1a_HMK73DSXX_L4,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV312_F01_0775_BDME190634968-1a_HN2JLDSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV319_F08_0782_BDME190634975-1a_HN2JLDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV330_H01_0793_BDME190634985-1a_HN2JLDSXX_L2_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV357_B01_0820_BDME190635011-1a_HMGLJDSXX_L3_1.fq.gz,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Embiotoca jacksoni,1,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Embiratermes neotenicus,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Diaprepes abbreviatus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Didelphis aurita,1,1,5.0,100.0,0.0,0.0,0.0
+other:glaciimonas sp. gg7,1,1,7.0,100.0,0.0,0.0,100.0
+other:goat gut metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:frankiales bacterium,1,1,8.0,100.0,0.0,0.0,100.0
+other:lysinibacillus capsici,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Gorilla14,1,1,5.0,100.0,0.0,0.0,0.0
+other:decomposition metagenome,1,1,6.0,100.0,0.0,0.0,0.0
+other:deltaproteobacteria bacterium,1,1,6.0,100.0,0.0,0.0,100.0
+other:dietary supplements metagenome,1,1,3.0,100.0,0.0,0.0,0.0
+other:ear metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:encephalitozoon hellem,1,1,7.0,100.0,0.0,0.0,100.0
+other:crepidotus cesatii,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Elaphodus cephalophus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Gymnolophus obscura,1,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:HV011_H06_0474_BDME190634669-1a_HMJH7DSXX_L1,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Gardnerycteris crenulata,1,1,7.0,100.0,0.0,0.0,100.0
+other:crocidura shantungensis,1,1,4.0,100.0,0.0,0.0,0.0
+other:cyanobacteriota bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:industrial waste metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:inocybe lanuginosa,1,1,6.0,100.0,0.0,0.0,100.0
+animal_gut:HV206_C03_0669_BDME190634864-1a_HMHNLDSXX_L2,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Globitermes brachycerastes,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Glyptotermes sp.,1,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Forest musk deer,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:G5B13,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:G5B16,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:G6A16,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Grus grus,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Guinea fowl,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Protobothrops mangshanensis,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Rhinopithecus brelichi,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Rhinopithecus strykeri,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Gallus_gallus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Hipposideros diadema,1,1,7.0,100.0,0.0,0.0,100.0
+other:loxospora ochrophaea,1,1,5.0,100.0,0.0,0.0,100.0
+other:lucina grandinata,1,1,6.0,100.0,0.0,0.0,0.0
+other:lake metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Tympanuchus cupido,1,1,7.0,100.0,0.0,100.0,0.0
+animal_gut:Vulpes vulpes,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Red panda,1,1,7.0,0.0,0.0,0.0,100.0
+animal_gut:Rhacodactylus leachianus,1,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Rhinolophus euryale,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Portunus trituberculatus,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Prorhinotermes simplex,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Proteles cristata,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Podarcis milensis,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Pere David's deer,1,1,7.0,0.0,0.0,0.0,100.0
+animal_gut:Tenebrio molitor,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Trachypithecus germaini,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Trachypithecus poliocephalus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Trichechus manatus latirostris,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Trigona fulviventris,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Tupaia glis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Fish,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Echinops telfairi,1,1,9.0,100.0,0.0,0.0,100.0
+other:inocybe petiginosa,1,1,6.0,100.0,0.0,0.0,100.0
+other:hipposideros jonesi,1,1,4.0,100.0,0.0,0.0,0.0
+other:gammaproteobacteria,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:GF Mouse,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Galleria mellonella,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Plateau Brown Frog,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Ovis aries (full capativity),1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Ovis canadensis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Panthera tigris altaica,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Romerolagus diazi,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Perisoreus infaustus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Petrolisthes sp.,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Papio cynocephalus and P. anubis,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Pig 60,1,1,13.0,100.0,0.0,100.0,100.0
+animal_gut:Lissachatina fulica,1,1,3.0,0.0,0.0,0.0,0.0
+animal_gut:Rousettus aegyptiacus,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:SPF mice BALB/c,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:SPF mice C57,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Sceloporus grammicus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Schizopyge nukiangensis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Rhinolophus pusillus,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Partamona musarum,1,1,5.0,100.0,0.0,0.0,0.0
+other:loripes orbiculatus,1,1,8.0,100.0,0.0,0.0,100.0
+other:loripinus fragilis,1,1,8.0,100.0,0.0,0.0,0.0
+animal_gut:Dama dama,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:HV020_I06_0483_BDME190634678-1a_HMJH7DSXX_L4,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV043_C02_0506_BDME190634701-1a_HMJH7DSXX_L1,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV050_C09_0513_BDME190634708-1a_HTMC3DSXX_L3,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV088_H02_0551_BDME190634746-1a_HTMF7DSXX_L1,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Domestic Cats,1,1,4.0,100.0,0.0,0.0,0.0
+other:landfill metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:lecanora polytropa,1,1,7.0,100.0,0.0,0.0,100.0
+other:lacticaseibacillus rhamnosus,1,1,3.0,0.0,0.0,0.0,0.0
+animal_gut:HV127_C05_0590_BDME190634785-1a_HMHM7DSXX_L2,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV136_D05_0599_BDME190634794-1a_HMHNLDSXX_L3,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:HV166_G08_0629_BDME190634824-1a_HTMC3DSXX_L3,1,1,4.0,100.0,0.0,0.0,0.0
+other:leptolyngbya sp. bl-a-14,1,1,8.0,100.0,0.0,0.0,100.0
+other:limnoraphis sp.,1,1,8.0,100.0,0.0,0.0,100.0
+other:nakamurella sp. gg22,1,1,7.0,100.0,0.0,0.0,100.0
+other:nitrospira sp.,1,1,8.0,100.0,0.0,0.0,100.0
+other:nitrospirota bacterium,1,1,8.0,100.0,0.0,0.0,100.0
+other:oceanicaulis alexandrii,1,1,8.0,100.0,0.0,0.0,100.0
+other:pegophysema philippiana,1,1,6.0,100.0,0.0,0.0,0.0
+other:penaeus vannamei,1,1,4.0,100.0,0.0,0.0,0.0
+other:phasianus colchicus,1,1,5.0,100.0,0.0,0.0,0.0
+other:oil sands metagenome,1,1,8.0,100.0,0.0,0.0,100.0
+other:methanobacterium subterraneum,1,1,5.0,100.0,0.0,0.0,100.0
+other:methanobrevibacter sp.,1,1,7.0,100.0,0.0,0.0,100.0
+other:microbial eukaryotic metagenome,1,1,3.0,100.0,0.0,0.0,0.0
+other:microbial fuel cell metagenome,1,1,7.0,100.0,0.0,0.0,100.0
+other:lactococcus lactis,1,1,7.0,100.0,0.0,0.0,100.0
+other:mouse skin metagenome,1,1,9.0,100.0,0.0,0.0,100.0
+other:mycolicibacterium sp.,1,1,7.0,100.0,0.0,0.0,100.0
+other:microcoleaceae cyanobacterium,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Capra sibirica,1,1,2.0,0.0,0.0,0.0,0.0
+other:microbialite metagenome,1,1,2.0,100.0,0.0,0.0,0.0
+other:marsupial metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:phycosphere metagenome,1,1,7.0,0.0,0.0,0.0,100.0
+other:pollen metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Cryptotermes secundus,1,1,5.0,100.0,0.0,0.0,0.0
+other:microcoleus sp. cawbg51,1,1,6.0,100.0,0.0,0.0,100.0
+other:methanobacteriota archaeon,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Drepanotermes gayi,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Drosophila melanogaster,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Cygnus atratus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Chiroptera,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Chroicocephalus ridibundus,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Chrysoperla externa,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Cleopatra sp.,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Capra hircus (San Clemente Island goat),1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Nannospalax galili,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Nasutitermes ephratae,1,1,9.0,100.0,0.0,0.0,100.0
+animal_gut:Neotoma lepida,1,1,10.0,100.0,0.0,100.0,100.0
+animal_gut:Ovis ammon polii,1,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Neotoma macrotis,1,1,10.0,100.0,0.0,100.0,100.0
+animal_gut:Neotoma stephensi,1,1,10.0,100.0,0.0,100.0,100.0
+animal_gut:Nomascus annamensis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Numida meleagris,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Miniopterus schreibersii,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Mirounga leonina,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Piaractus mesopotamicus,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Odontotaenius disjunctus,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Mus_musculus,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Myotis indochinensis,1,1,4.0,0.0,0.0,0.0,0.0
+animal_gut:Myotis myotis,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Naemorhedus goral,1,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Eubalaena glacialis,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:Eulemur macaco,1,1,5.0,100.0,0.0,0.0,0.0
+other:polyplax serrata,1,1,3.0,100.0,0.0,0.0,0.0
+other:tree metagenome,1,1,3.0,100.0,0.0,0.0,0.0
+other:treponema sp.,1,1,7.0,100.0,0.0,0.0,100.0
+other:typomys planifrons,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:Alexandromys oeconomus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Microtus ochrogaster,1,1,12.0,100.0,0.0,0.0,100.0
+other:oral-nasopharyngeal metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:orf virus,1,1,8.0,100.0,0.0,0.0,100.0
+other:organismal metagenomes,1,1,0.0,0.0,0.0,0.0,0.0
+animal_gut:Camelus bactrianus ferus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Capra,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Eotrichia longipennis,1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:Equus ferus przewalskii,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Equus quagga burchellii,1,1,10.0,100.0,0.0,0.0,100.0
+other:rugalucina munda,1,1,8.0,100.0,0.0,0.0,100.0
+other:ruminococcus sp.,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:0.19,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:189,1,1,12.0,100.0,0.0,100.0,100.0
+animal_gut:192,1,1,13.0,100.0,0.0,100.0,100.0
+animal_gut:195,1,1,13.0,100.0,0.0,100.0,100.0
+animal_gut:197,1,1,13.0,100.0,0.0,100.0,100.0
+other:seriola lalandi,1,1,4.0,100.0,0.0,0.0,0.0
+animal_gut:BALB/c,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Bactrocera oleae,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Bat,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Biomphalaria glabrata,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Bombina orientalis,1,1,4.0,100.0,0.0,0.0,100.0
+animal_gut:Bombus rufocinctus,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Anser fabalis,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Anser anser,1,1,5.0,100.0,0.0,0.0,0.0
+other:tomb metagenome,1,1,2.0,0.0,0.0,0.0,0.0
+other:rhodococcoides fascians,1,1,8.0,100.0,0.0,0.0,100.0
+other:rhizoplaca haydenii,1,1,1.0,100.0,0.0,0.0,0.0
+animal_gut:Apis mellifera ligustica,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Apis mellifera mellifera,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Apodemus agrarius,1,1,2.0,0.0,0.0,0.0,0.0
+animal_gut:Apodemus peninsulae,1,1,5.0,100.0,0.0,0.0,0.0
+other:zooplankton metagenome,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Mareca penelope,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Lithobates clamitans tadpole gut,1,1,8.0,100.0,0.0,0.0,100.0
+animal_gut:C57BL/20 mice,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:C57BL/6 J male mice-A33,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:C57BL/6 mouse,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Microtus obscurus,1,1,7.0,100.0,0.0,0.0,100.0
+animal_gut:Macaca mulatta littoralis,1,1,6.0,100.0,0.0,0.0,100.0
+other:toensbergia leucococca,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:3.28,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:4.37,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:6.43,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:74.99,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:9-1R,1,1,5.0,100.0,0.0,0.0,0.0
+animal_gut:Acryllium vulturinum,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:'Mus musculos C57BL/6',1,1,6.0,100.0,0.0,0.0,0.0
+animal_gut:.Presbytis femoralis,1,1,5.0,100.0,0.0,0.0,0.0
+other:uncultured marine virus,1,1,9.0,100.0,0.0,0.0,100.0
+other:vaucheria bursata,1,1,2.0,0.0,0.0,0.0,0.0
+other:tannin metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:tar pit metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:thelocarpon impressellum,1,1,5.0,100.0,0.0,0.0,100.0
+other:thelotrema lepadinum,1,1,5.0,100.0,0.0,0.0,100.0
+animal_gut:Ailurus fulgens,1,1,7.0,100.0,0.0,0.0,100.0
+other:vibrio kanaloae,1,1,5.0,100.0,0.0,0.0,100.0
+other:streptococcus sp. ritm070i12,1,1,4.0,100.0,0.0,0.0,0.0
+other:streptococcus sp. ritm084i2,1,1,4.0,100.0,0.0,0.0,0.0
+other:winery metagenome,1,1,8.0,100.0,0.0,0.0,100.0
+other:xanthomonas euvesicatoria,1,1,8.0,100.0,0.0,0.0,100.0
+other:xylophilus sp.,1,1,8.0,100.0,0.0,0.0,100.0
+other:volcano metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:vulcanimicrobiota bacterium,1,1,7.0,100.0,0.0,0.0,100.0
+other:watershed metagenome,1,1,4.0,100.0,0.0,0.0,0.0
+other:shale gas metagenome,1,1,3.0,0.0,0.0,0.0,0.0
+other:shark metagenome,1,1,5.0,100.0,0.0,0.0,0.0
+other:saccharomyces cerevisiae,1,1,1.0,0.0,0.0,0.0,0.0
+other:spiroplasma endosymbiont of nesidiocoris tenuis,1,1,3.0,100.0,0.0,0.0,0.0
+other:spodoptera frugiperda,1,1,7.0,100.0,0.0,100.0,100.0
+animal_gut:Cobb Broiler,1,1,3.0,100.0,0.0,0.0,0.0
+animal_gut:Cornitermes sp.,1,1,10.0,100.0,0.0,0.0,100.0
+animal_gut:Crepititermes verruculosus,1,1,9.0,100.0,0.0,0.0,100.0

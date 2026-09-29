@@ -1,0 +1,6 @@
+step,samples,studies
+processed (>= 1 published output),64481,9383.0
+unitig DNA sketch ok,61246,9085.0
++ unitig protein sketch ok,58560,8669.0
++ KO profile with >= 1 KO,53248,8130.0
+(of which qc_pass),50769,

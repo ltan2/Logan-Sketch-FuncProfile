@@ -1,0 +1,51 @@
+cat,share
+BRITE hierarchies only,0.2660251613746571
+not in pathway/BRITE,0.12159286443979643
+Carbohydrate metabolism,0.06860957300498459
+Membrane transport,0.06041490853570887
+Amino acid metabolism,0.058977088721837864
+Metabolism of cofactors and vitamins,0.046880327619816434
+Translation,0.0461870685193966
+Energy metabolism,0.04290383617533527
+Glycan biosynthesis and metabolism,0.039290226244776155
+Replication and repair,0.03884186697963421
+Signal transduction,0.033323174830680216
+Nucleotide metabolism,0.03139118458644488
+Cellular community - prokaryotes,0.024388197877420296
+"Folding, sorting and degradation",0.019522075817685197
+Lipid metabolism,0.017525248772369138
+Metabolism of other amino acids,0.015086753027852009
+Biosynthesis of other secondary metabolites,0.010733482460997324
+Cell growth and death,0.01049932944542133
+Drug resistance: antimicrobial,0.010080112572697867
+Metabolism of terpenoids and polyketides,0.00999543405113157
+Xenobiotics biodegradation and metabolism,0.009409740467187252
+Transcription,0.007812979429898179
+Cell motility,0.007652732623516331
+Infectious disease: bacterial,0.006189787858071559
+Transport and catabolism,0.006175184712317768
+Environmental adaptation,0.003903598396575901
+Aging,0.0034467427474672366
+Endocrine system,0.0033234194018256047
+Cancer: overview,0.002688035728565957
+Digestive system,0.0023621390957556327
+Cardiovascular disease,0.0021882358181053736
+Endocrine and metabolic disease,0.00217539715412381
+Neurodegenerative disease,0.0018603737625022235
+Drug resistance: antineoplastic,0.0014361883302215076
+Infectious disease: viral,0.0011666773229547249
+not in KEGG BRITE,0.0011589393353171281
+Development and regeneration,0.0010901606650484262
+Nervous system,0.000838256579733369
+Circulatory system,0.0007180643378432593
+Chromosome,0.0006325805699546151
+Immune system,0.0005986280420388282
+Information processing in viruses,0.0005914546307477864
+Infectious disease: parasitic,0.000580415378751124
+Immune disease,0.00042353716425351984
+Cancer: specific types,0.00040938073471539273
+Excretory system,0.00026403326335741134
+Signaling molecules and interaction,0.0001948843930603926
+Cellular community - eukaryotes,0.00018948514220565392
+Substance dependence,0.00016279804270778462
+Sensory system,3.7968652621204466e-05

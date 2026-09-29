@@ -1,0 +1,566 @@
+disease_c,n_samples,n_studies
+crohn's disease,164,12
+ulcerative colitis,94,11
+nsclc,43,4
+positive,36,1
+etec h10407 challenge,29,1
+kidney failure,28,1
+v. cholera challenge,27,1
+human gut microbiota,25,2
+campylobacter:-;salmonella:-;clostridium:-,23,4
+colorectal cancer,20,2
+allergies,16,1
+parkinson,16,1
+irritable bowel syndrome,15,1
+wounded:-,14,1
+periodontitis,14,5
+pneumonia,14,2
+unaffected,14,2
+pi,13,1
+cavernous angioma,13,1
+exudative cutaneous ulcer disease,12,1
+fever of unknown origin (fuo),12,1
+prosthetic joint infection,11,2
+pouchitis,11,1
+index 1: low cestode load,10,1
+pdac,10,1
+ibsd_nobam,10,1
+severe chronic ulcerative colitis,10,1
+aml,9,3
+malignant neoplasm of breast,9,1
+campylobacter:+;salmonella:-;clostridium:-,9,4
+peri-implantitis,9,2
+hiv infection,8,1
+cancer,8,1
+parkinson's disease,8,2
+hiv,8,1
+schizophrenia,8,4
+food allergy,8,1
+index 0: no cestode,8,1
+systemic lupus erythematosus,8,1
+pd,8,3
+diarrhea,8,2
+index 2: moderate cestode load,7,1
+c.difficile infection,7,1
+non_ibd,7,1
+campylobacter:ns;salmonella:ns;clostridium:ns,7,3
+malignant neoplasm of prostate,7,1
+inflammatory bowel disease,7,1
+infected,7,2
+diseased,7,2
+full-term delivery,7,1
+alcohol use disorder,7,2
+stable decompensated cirrhosis,7,2
+diabetes mellitus,6,1
+parkinson disease,6,1
+obese,6,1
+psoriasis,6,1
+pre-term delivery,6,1
+rwroomtemp,6,1
+ovine footrot,6,1
+whim syndrome,6,1
+asthma,6,3
+patient with fibromylagia (fm group),6,1
+malignant neoplasm of bronchus and lung,6,1
+lynch syndrome,6,1
+lassa fever,6,1
+konzo,5,1
+intestinal polyp,5,1
+non-parasitized,5,1
+saa,5,1
+dental caries,5,1
+alcoholic hepatitis,5,1
+advanced dementia (alzheimer's),5,1
+unrelated control (control group),5,1
+d+7,4,1
+rcc,4,1
+recovered,4,1
+timepoint: 0,4,1
+pre-aclf,4,1
+omni,4,1
+bi,4,1
+mother_patient,4,1
+ms,4,1
+t1d,4,1
+kawasaki disease,4,1
+mother_healthy control,4,1
+fatty liver disease,4,1
+home,4,1
+rheumatic disease,4,1
+ps,4,1
+type 1 diabetes,4,1
+multiple myeloma and malignant plasma cell neoplasms,4,1
+gastrointestinal system disease|colitis,3,1
+doid:8577,3,1
+disease|periodontitis|hypertension|obesity,3,1
+dlbcl,3,1
+european,3,1
+all,3,1
+vegetarian; leans toward vegetarian,3,1
+malignant neoplasm of pancreas,3,1
+large adenoma,3,1
+diag_pda,3,1
+dental caries free,3,1
+laboratory,3,1
+doid:8778,3,1
+c.difficile carrier,3,1
+oral squamous cell carcinoma,3,1
+tuberculous meningitis,3,1
+recurrent acute,3,1
+primary sclerosing cholangitis,3,1
+phlegmonous,3,1
+cervical cancer,3,1
+chronic enteritis,3,1
+bl,3,1
+bsh+ letrozole,3,1
+control non-asthmatic patient,3,1
+non_infected,3,1
+bv negative,3,1
+salmonellosis,3,1
+yes,3,1
+acute pancreatitis,3,1
+vehicle,3,1
+fever,3,2
+malignant neoplasm of liver and intrahepatic bile ducts,3,1
+nb patient_therapy,3,1
+metals,3,1
+colorectal carcinoma,3,1
+cmd affected,3,1
+disease,3,1
+health (no peri-implantitis),3,1
+indeterminate colitis,3,1
+atopic dermatitis,2,1
+type 2 diabetes,2,1
+bsh- placebo,2,1
+small adenoma,2,1
+respiratory abnormality|gastrointestinal system disease|dentin caries|colitis,2,1
+bipolar disorder,2,1
+clostridium difficile infection,2,1
+pre-eclampsia,2,1
+cd4,2,1
+perio,2,1
+phosphorus deficient,2,1
+chlorpromazinelowdose,2,1
+timepoint: 1,2,1
+pso,2,1
+pancreatic neoplasm,2,1
+ovariectomy,2,1
+d+30,2,1
+caries-active,2,1
+ctr,2,1
+crc (stage iii/iv),2,1
+covid-19,2,1
+cp_clindamycin,2,1
+omnivore; avoids some fruits,2,1
+clindamycin,2,1
+low_grade,2,1
+ibd_peripheral spa,2,1
+lynch syndrom,2,1
+lymphoid leukemia,2,1
+disease|chronic obstructive pulmonary disease|lung cancer|hypertension,2,1
+labcontrol test,2,1
+no dss,2,1
+metabolic syndrome according to national cholesterol education program adult treatment panel iii (ncep atp iii) criteria,2,1
+disease|hypertension,2,1
+meningitis,2,1
+"malignant neoplasm of uterus, part unspecified",2,1
+mitral stn's,2,1
+"mild, steroid-naive atopic asthmatic patient",2,1
+malignant neoplasm without specification of site,2,1
+eye disease|central nervous system disease|disease|periodontitis|dry eye syndrome|hypertension,2,1
+nc,2,2
+nb patient,2,1
+malignant neoplasm of cervix uteri,2,1
+malignant neoplasm of base of tongue,2,1
+malignant neoplasm of rectum,2,1
+malignant neoplasm of colon,2,1
+malignant neoplasm of ovary,2,1
+healthy mucosa,2,1
+healthy controls,2,1
+female_subject_of_31.5_years,2,1
+group2_aud,2,1
+glucose_vehicle_1_metagenome,2,1
+gastrointestinal system disease|disease|hypertension|diabetes mellitus|obesity,2,1
+hcc,2,1
+disease|parkinson's disease|hypertension,2,1
+female_subject_of_38.33333333_years,2,1
+female_subject_of_36.16666667_years,2,1
+ibsd_bam,2,1
+iga glomerulonephritis,2,1
+female_subject_of_na_years,2,1
+gastrointestinal system disease|dentin caries,2,1
+female_subject_of_30.0_years,2,1
+female_subject_of_37.58333333_years,2,1
+gastrointestinal system disease,2,1
+female_subject_of_2.0_years,2,1
+female_subject_of_39.0_years,2,1
+breast cancer,2,1
+test,2,1
+antibiotic treat,2,1
+antibiotics_onedose,2,1
+apparently healthy,2,1
+viral pneumonia,2,1
+antibiotics_metals,2,1
+unstable decompensated cirrhosis,2,1
+urinary tract infection,2,2
+wwroomtemp,2,1
+aclf,2,2
+acute lymphoblastic leukemia,2,2
+acute respiratory illness,2,1
+thyroid gland disease|dry eye syndrome|aniridia|hypertension|obesity,1,1
+aaa,1,1
+able-bodied,1,1
+acne inversa,1,1
+well human adult,1,1
+cholecystitis,1,1
+"cholecystitis, gastritis, lung disease, heart disease",1,1
+chronic obstructive pulmonary disease,1,1
+"clostridium difficile infection, ulcerative colitis",1,1
+central nervous system disease|disease|coronary artery disease|hypertension|diabetes mellitus,1,1
+central nervous system disease|disease|dentin caries|periodontitis|coronary artery disease|heart failure|hypertension|diabetes mellitus|obesity,1,1
+central nervous system disease|disease|obesity,1,1
+central nervous system disease|disease|parkinson's disease,1,1
+pleural space infection,1,1
+population des,1,1
+population web,1,1
+unaffected.sibling,1,1
+unkwnon,1,1
+thyroid gland disease|gastrointestinal system disease|cystic fibrosis|diabetes mellitus,1,1
+thyroid gland disease|gastrointestinal system disease|disease|periodontitis|colitis|hypertension,1,1
+timepoint: n/a,1,1
+normal with chemotherapy,1,1
+pt3n1b,1,1
+pulmonary aspergillosis,1,1
+pulmonary infection,1,1
+respiratory abnormality|disease,1,1
+respiratory abnormality|disease|dentin caries|hypertension|obesity,1,1
+pregnancy hypothyroidism,1,1
+pt3n1a,1,1
+crc,1,1
+control no.033,1,1
+control no.046,1,1
+control no.055,1,1
+control no.078,1,1
+p_31,1,1
+p_47,1,1
+p_76,1,1
+female_subject_of_42.33333333_years,1,1
+female_subject_of_43.16666667_years,1,1
+female_subject_of_43.58333333_years,1,1
+female_subject_of_46.16666667_years,1,1
+female_subject_of_4.083333333_years,1,1
+female_subject_of_4.583333333_years,1,1
+female_subject_of_4.75_years,1,1
+female_subject_of_4.916666667_years,1,1
+female_subject_of_52.08333333_years,1,1
+female_subject_of_52.83333333_years,1,1
+female_subject_of_6.083333333_years,1,1
+female_subject_of_6.833333333_years,1,1
+female_subject_of_40.5_years,1,1
+female_subject_of_41.33333333_years,1,1
+female_subject_of_41.41666667_years,1,1
+female_subject_of_42.0_years,1,1
+female_subject_of_8.5_years,1,1
+female_subject_of_9.083333332999999_years,1,1
+female_subject_of_9.25_years,1,1
+female_subject_of_9.833333332999999_years,1,1
+female_subject_of_48.75_years,1,1
+female_subject_of_5.916666667_years,1,1
+female_subject_of_50.25_years,1,1
+female_subject_of_50.5_years,1,1
+female_subject_of_14.75_years,1,1
+female_subject_of_14.83333333_years,1,1
+female_subject_of_25.58333333_years,1,1
+female_subject_of_27.25_years,1,1
+female_subject_of_65.0_years,1,1
+female_subject_of_7.083333333_years,1,1
+female_subject_of_7.333333333_years,1,1
+female_subject_of_7.5_years,1,1
+female_subject_of_36.25_years,1,1
+female_subject_of_36.33333333_years,1,1
+female_subject_of_37.08333333_years,1,1
+female_subject_of_37.0_years,1,1
+female_subject_of_37.91666667_years,1,1
+female_subject_of_32.16666667_years,1,1
+female_subject_of_33.0_years,1,1
+female_subject_of_33.66666667_years,1,1
+gastrointestinal system disease|central nervous system disease|disease|hypertension|obesity,1,1
+gastrointestinal system disease|central nervous system disease|obesity,1,1
+gastrointestinal system disease|cystic fibrosis,1,1
+exposed to trypanosoma cruzi,1,1
+disease|hypertension|obesity,1,1
+disease|lung cancer,1,1
+disease|lung cancer|dentin caries,1,1
+dkc,1,1
+gastrointestinal system disease|disease|cystic fibrosis,1,1
+gastrointestinal system disease|disease|dentin caries|hypertension|diabetes mellitus|obesity,1,1
+gastrointestinal system disease|disease|hypertension,1,1
+gastrointestinal system disease|disease|idiopathic pulmonary fibrosis|sarcoidosis|dry eye syndrome|obesity,1,1
+gastrointestinal system disease|disease|periodontitis|hypertension|obesity,1,1
+gastrointestinal system disease|periodontitis|colitis|obesity,1,1
+gastrointestinal system disease|periodontitis|obesity,1,1
+gastrointestinal system disease|central nervous system disease|disease|colitis,1,1
+female_subject_of_40.08333333_years,1,1
+female_subject_of_40.25_years,1,1
+female_subject_of_40.41666667_years,1,1
+gc,1,1
+germ donor,1,1
+glucose_amoxicillin_1_metagenome,1,1
+"gvhd model system; splenic t cells from balb/c donors or c57bl/6 were enriched by utilizing pan-t microbeads (130-095-130, miltenyi biotec) and bone marrow was collected from the same donors. on day 0, 3x10^6 t cells and 5x10^6 bone marrow cells were injected intravenously into c57bl/6 recipient mice. recipient mice received 10gy of irradiation on day -1.",1,1
+h4,1,1
+healthy pregnancy,1,1
+hepatic encephalopathy,1,1
+high methane producing,1,1
+male_subject_of_0.15890411_years,1,1
+male_subject_of_0.493150685_years,1,1
+male_subject_of_0.833333333_years,1,1
+male_subject_of_1.333333333_years,1,1
+male_subject_of_1.416666667_years,1,1
+idiopathic cd4 lymphocytopenia,1,1
+iib,1,1
+iiia,1,1
+hv,1,1
+hypothyroidism,1,1
+hypoxic-ischemic encephalopathy,1,1
+ibd-u,1,1
+healthy [ncit:c115935],1,1
+female_subject_of_31.33333333_years,1,1
+gastrointestinal system disease|cystic fibrosis|diabetes mellitus,1,1
+gastrointestinal system disease|disease|colitis|obesity,1,1
+fiber_amoxicillin_5_metagenome,1,1
+gastrointestinal system disease|central nervous system disease|cystic fibrosis|diabetes mellitus,1,1
+infectious bovine keratoconjunctivitis,1,1
+input,1,1
+id: doid:8778 crohn's disease,1,1
+female_subject_of_34.25_years,1,1
+female_subject_of_34.75_years,1,1
+female_subject_of_35.41666667_years,1,1
+female_subject_of_35.75_years,1,1
+female_subject_of_36.08333333_years,1,1
+female_subject_of_29.33333333_years,1,1
+female_subject_of_30.25_years,1,1
+female_subject_of_31.0_years,1,1
+male_subject_of_39.66666667_years,1,1
+male_subject_of_4.583333333_years,1,1
+male_subject_of_40.5_years,1,1
+male_subject_of_41.66666667_years,1,1
+male_subject_of_42.33333333_years,1,1
+male_subject_of_42.58333333_years,1,1
+male_subject_of_44.0_years,1,1
+male_subject_of_32.58333333_years,1,1
+male_subject_of_46.75_years,1,1
+male_subject_of_47.66666667_years,1,1
+male_subject_of_48.5_years,1,1
+male_subject_of_49.41666667_years,1,1
+male_subject_of_5.0_years,1,1
+male_subject_of_5.25_years,1,1
+male_subject_of_5.5_years,1,1
+male_subject_of_38.33333333_years,1,1
+liver failure,1,1
+ischemic cardiomyopathy,1,1
+isopd1+cc,1,1
+k1_saliva_dna,1,1
+k8_tongue_dna,1,1
+k9_tongue_dna,1,1
+keratoconus,1,1
+male_subject_of_45.66666667_years,1,1
+male_subject_of_11.66666667_years,1,1
+male_subject_of_13.25_years,1,1
+male_subject_of_14.5_years,1,1
+low methane producing,1,1
+major depressive disorder,1,1
+malaria,1,1
+male_subject_of_0.0_years,1,1
+lad1,1,1
+dry eye syndrome,1,1
+dry eye syndrome|hypertension,1,1
+dss,1,1
+encephalitis,1,1
+male_subject_of_37.16666667_years,1,1
+male_subject_of_37.41666667_years,1,1
+male_subject_of_38.16666667_years,1,1
+male_subject_of_21.0_years,1,1
+female_subject_of_11.0_years,1,1
+female_subject_of_11.25_years,1,1
+female_subject_of_11.5_years,1,1
+eye disease|central nervous system disease|disease|dentin caries|hypertension|obesity,1,1
+eye disease|disease|lung cancer|coronary artery disease,1,1
+eye disease|disease|periodontitis|coronary artery disease|heart failure|hypertension|diabetes mellitus,1,1
+eye disease|dry eye syndrome|obesity,1,1
+eye disease|gastrointestinal system disease|disease|periodontitis|dry eye syndrome|aniridia,1,1
+diabetes,1,1
+diabetes mellitus with chemotherapy,1,1
+diag_papca,1,1
+female_subject_of_0.038356164_years,1,1
+female_subject_of_0.4166666670000001_years,1,1
+female_subject_of_10.0_years,1,1
+female_subject_of_10.58333333_years,1,1
+female_subject_of_10.75_years,1,1
+male_subject_of_32.91666667_years,1,1
+male_subject_of_34.33333333_years,1,1
+male_subject_of_35.25_years,1,1
+male_subject_of_35.83333333_years,1,1
+disease|chronic obstructive pulmonary disease,1,1
+disease|chronic obstructive pulmonary disease|cholangitis|coronary artery disease|heart failure|hypertension|diabetes mellitus|obesity,1,1
+dentin caries,1,1
+dentin caries|periodontitis,1,1
+male_subject_of_7.583333333_years,1,1
+male_subject_of_7.5_years,1,1
+male_subject_of_7.666666667_years,1,1
+male_subject_of_8.083333332999999_years,1,1
+male_subject_of_8.0_years,1,1
+no peri-implantitis,1,1
+non-ibd,1,1
+non-infected pancreatic necrosis,1,1
+malignant neoplasm of other and unspecified female genital organs,1,1
+male_subject_of_9.75_years,1,1
+malignant melanoma of skin,1,1
+malignant neoplasm of anus and anal canal,1,1
+malignant neoplasm of bladder,1,1
+male_subject_of_5.666666667_years,1,1
+male_subject_of_6.166666667_years,1,1
+male_subject_of_62.33333333_years,1,1
+malignant neoplasm of other connective and soft tissue,1,1
+malignant neoplasm of peripheral nerves and autonomic nervous system,1,1
+malignant neoplasm of stomach,1,1
+malignant neoplasm of corpus uteri,1,1
+malignant neoplasm of esophagus,1,1
+"malignant neoplasm of kidney, except renal pelvis",1,1
+malignant neoplasm of larynx,1,1
+malignant neoplasm of other and ill-defined sites,1,1
+male_subject_of_23.08333333_years,1,1
+male_subject_of_28.33333333_years,1,1
+male_subject_of_30.66666667_years,1,1
+male_subject_of_31.0_years,1,1
+male_subject_of_31.16666667_years,1,1
+male_subject_of_31.91666667_years,1,1
+male_subject_of_32.25_years,1,1
+malignant neoplasm of other and unspecified major salivary glands,1,1
+disease|colitis|hypertension|obesity,1,1
+disease|colitis|obesity,1,1
+disease|coronary artery disease|atrial fibrillation|hypertension,1,1
+disease|coronary artery disease|heart failure|hypertension,1,1
+disease|coronary artery disease|heart failure|hypertension|diabetes mellitus,1,1
+disease|coronary artery disease|hypertension,1,1
+diclofenaclowdose,1,1
+disease|acne inversa|obesity,1,1
+disease|dentin caries|coronary artery disease|heart failure|hypertension|diabetes mellitus,1,1
+disease|dentin caries|coronary artery disease|heart failure|hypertension|obesity,1,1
+disease|dentin caries|heart failure|diabetes mellitus,1,1
+disease|dentin caries|hypertension|diabetes mellitus|obesity,1,1
+disease|dentin caries|periodontitis|colitis,1,1
+disease|diabetes mellitus,1,1
+disease|chronic obstructive pulmonary disease|lung cancer|hypertension|diabetes mellitus,1,1
+disease|colitis,1,1
+coronary art,1,1
+coronary artery disease|heart failure|atrial fibrillation|hypertension,1,1
+colorectal adenoma development,1,1
+"colorectal cancer, stage i",1,1
+control no.001,1,1
+control no.017,1,1
+control no.019,1,1
+disease|dentin caries|coronary artery disease|heart failure,1,1
+non-infectious diseases,1,1
+mp11_saliva_dna,1,1
+mp4_tongue_dna,1,1
+myelodysplastic syndromes,1,1
+na_subject_of_na_years,1,1
+melanoma_m1d,1,1
+"metabolic disease, allergies",1,1
+control/unexposed,1,1
+catarrhal,1,1
+crohn’s disease,1,1
+deg jt dis,1,1
+demyelinating disease in cns,1,1
+coronary artery disease|heart failure|hypertension|diabetes mellitus|obesity,1,1
+coronary artery disease|heart failure|hypertension|obesity,1,1
+coronary artery disease|hypertension|obesity,1,1
+cp_phage,1,1
+p_09,1,1
+p_16,1,1
+central nervous system disease,1,1
+central nervous system disease|dentin caries|periodontitis,1,1
+central nervous system disease|disease,1,1
+campylobacteriosis,1,1
+carcinoma in situ of breast,1,1
+caries-free,1,1
+patient no.073,1,1
+patient with diarrhea (pathogen: vibrio cholerae o1),1,1
+pcos,1,1
+perforated,1,1
+parasitized,1,1
+patient no.017,1,1
+patient no.029,1,1
+patient no.030,1,1
+mitral regurgitation,1,1
+malignant neoplasm of thyroid gland,1,1
+malignant neoplasm of tonsil,1,1
+malignant pleural effusion,1,1
+mature t/nk-cell lymphomas,1,1
+melanoma_m0,1,1
+melanoma_m1b,1,1
+patient no.044,1,1
+respiratory abnormality|gastrointestinal system disease|cystic fibrosis|hypertension|diabetes mellitus,1,1
+85.15,1,1
+82.64,1,1
+rheumatoid arthritis,1,1
+rw4degrees,1,1
+81.72,1,1
+70.15,1,1
+white gill,1,1
+bsh+ vehicle,1,1
+bsh- dht,1,1
+bsh- letrozole,1,1
+bacterial meningitis,1,1
+"bipolar disorder, adhd",1,1
+severe pneumonia,1,1
+88.06,1,1
+spondylarthritis,1,1
+pituitary tumor,1,1
+bsh- vehicle,1,1
+cad,1,1
+campylobacter: cb24.18;salmonella:;clostridium:,1,1
+all.survivor,1,1
+bronchiectasis,1,1
+bsh+ dht,1,1
+bsh+ placebo,1,1
+central nervous system disease|disease|periodontitis|obesity,1,1
+cervical dysplasia,1,1
+cervical rib,1,1
+cca,1,1
+ced104st_s81_control,1,1
+ced46st_s67_control,1,1
+ced96st_s79_control,1,1
+periodontally healthy,1,1
+secondary malignant neoplasm of respiratory and digestive organs,1,1
+"severe asthmatic, on high dose inhaled steroids or oral corticosteroids, patient",1,1
+severe community-acquired pneumonia,1,1
+female_subject_of_31.83333333_years,1,1
+female_subject_of_31.91666667_years,1,1
+female_subject_of_12.0_years,1,1
+female_subject_of_12.16666667_years,1,1
+female_subject_of_13.08333333_years,1,1
+thyroid gland disease|disease|periodontitis|hypertension,1,1
+thyroid gland disease|disease|periodontitis|hypertension|obesity,1,1
+"spondylarthritis, crohn's disease",1,1
+stipe rot,1,1
+stoma,1,1
+stroke,1,1
+stunted,1,1
+surveillance swab,1,1
+borrelia burgdorferi group negative,1,1
+aortic insufficiency,1,1
+apd1+casta,1,1
+ascending aortic aneurysm,1,1
+asthmatic,1,1
+tetracycline,1,1
+thyroid gland disease|disease|dry eye syndrome|aniridia|hypertension,1,1
+thyroid gland disease|disease|periodontitis|dry eye syndrome|hypertension|diabetes mellitus,1,1
+ww4degrees,1,1
+yellow fever,1,1
+urinary tract infections,1,1
+viral encephalitis and/or meningitis,1,1
+type 2 diabetes mellitus,1,1
+ucr7_cp04727_s7_ulcerative colitis,1,1
+"ulcerative colitis, allergies",1,1
+bleaching,1,1
